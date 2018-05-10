@@ -1,0 +1,3 @@
+create or replace view vw_liqsimitexterno_vobo as
+select "CuentaRecaudo","FechaRecaudo","FechaProceso","FechaDispersion","FecDispCon","Oficina","NumeroLiquidacion","Comparendo","FechaComp","Identificacion","Divipo","Municipio","Departamento","TipoRecaudo","IdConcesionarioLiquidador","IdConcesionarioZon","Validador","Fecha2002","VRecaudo","VAdicional","VBase","VSimitBase","VCLiquidador","VSimit","VFCSimt","VFCConcesionario","VEquilibrio","EE18","EE2","VSevial3","VSevial27","VIva27","VFCM18","VIva18","VPolca","VTimbre27","VTimbre27_18","VRetencion27","VOperadorCon","VFCMCon","VTercero1","VTercero2","VTercero3","VMunicipio","VAcuerdo","VIVACon","VTimbreCon","VRetencionContConc","VTimbreContConc","BancoRec" from vw_liqsimitexterno;
+

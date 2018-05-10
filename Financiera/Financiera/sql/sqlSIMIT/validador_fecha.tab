@@ -1,0 +1,55 @@
+create table VALIDADOR_FECHA
+(
+  IDMUNICIPIO              CHAR(8) not null,
+  IDVALIDADOR              CHAR(3) not null,
+  FECHA_INI                DATE,
+  FECHA_FIN                DATE,
+  INDTIPO                  VARCHAR2(5) not null,
+  P_MUNICIPIO              NUMBER,
+  P_FCM_CONTRAVENCIONAL    NUMBER,
+  P_CONCES_CONTRAVENCIONAL NUMBER,
+  P_ACUERDOPAGO            NUMBER,
+  NIT_TERCERO1             VARCHAR2(10),
+  BASE_TERCERO1            NUMBER,
+  IND_BASE_TERCERO1        NUMBER,
+  NIT_TERCERO2             VARCHAR2(10),
+  BASE_TERCERO2            NUMBER,
+  IND_BASE_TERCERO2        NUMBER
+)
+;
+comment on column VALIDADOR_FECHA.IDMUNICIPIO
+  is 'Municipio';
+comment on column VALIDADOR_FECHA.IDVALIDADOR
+  is 'validador';
+comment on column VALIDADOR_FECHA.FECHA_INI
+  is 'fecha inicial';
+comment on column VALIDADOR_FECHA.FECHA_FIN
+  is 'fecha final';
+comment on column VALIDADOR_FECHA.INDTIPO
+  is 'tipo comparendo (SIMIT, POLCA)';
+comment on column VALIDADOR_FECHA.P_MUNICIPIO
+  is 'porcentaje municipio';
+comment on column VALIDADOR_FECHA.P_FCM_CONTRAVENCIONAL
+  is 'porcentaje fcm contravencional';
+comment on column VALIDADOR_FECHA.P_CONCES_CONTRAVENCIONAL
+  is 'porcentaje concesionario contravencional';
+comment on column VALIDADOR_FECHA.P_ACUERDOPAGO
+  is 'porcentaje de acuerdo de pago';
+comment on column VALIDADOR_FECHA.NIT_TERCERO1
+  is 'nit tercero 1';
+comment on column VALIDADOR_FECHA.BASE_TERCERO1
+  is 'base tercero 1';
+comment on column VALIDADOR_FECHA.IND_BASE_TERCERO1
+  is 'indicador base tercero 1';
+comment on column VALIDADOR_FECHA.NIT_TERCERO2
+  is 'nit tercero 2';
+comment on column VALIDADOR_FECHA.BASE_TERCERO2
+  is 'base tercero 2';
+comment on column VALIDADOR_FECHA.IND_BASE_TERCERO2
+  is 'base tercero 2';
+alter table VALIDADOR_FECHA
+  add constraint PK_VALIDADOR_FECHA primary key (IDMUNICIPIO, IDVALIDADOR, INDTIPO);
+alter table VALIDADOR_FECHA
+  add constraint CH_INDTIPO_VF
+  check (INDTIPO IN ('SIMIT','POLCA'));
+

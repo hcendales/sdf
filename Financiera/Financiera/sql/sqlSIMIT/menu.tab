@@ -1,0 +1,20 @@
+create table MENU
+(
+  IDMENU     NUMBER,
+  NAMEMENU   VARCHAR2(100),
+  PAGE       VARCHAR2(100),
+  PADREID    NUMBER,
+  ENABLEMENU NUMBER
+)
+;
+comment on column MENU.IDMENU
+  is 'Id del menu';
+comment on column MENU.NAMEMENU
+  is 'Nombre del menu';
+comment on column MENU.PAGE
+  is 'pagina que se invoca en el menu';
+comment on column MENU.PADREID
+  is 'id del padre jerarquico del menu';
+comment on column MENU.ENABLEMENU
+  is 'menu activo';
+

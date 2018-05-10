@@ -1,0 +1,172 @@
+create table P_DISPERSION_CONCESIONARIO
+(
+  IDCONCESIONARIO               CHAR(2) not null,
+  CONCESIONARIO_S               NUMBER,
+  FONDO_COB_CONCESIONARIO_S     NUMBER,
+  FONDO_COB_SIMIT_S             NUMBER,
+  SIMIT_S                       NUMBER,
+  EQUILIBRIO_ECONOMICO_S        NUMBER,
+  CONCESIONARIO_PM              NUMBER,
+  FONDO_COB_CONCESIONARIO_PM    NUMBER,
+  FONDO_COB_SIMIT_PM            NUMBER,
+  EQUILIBRIO_ECONOMICO_PM       NUMBER,
+  SIMIT_PP                      NUMBER,
+  SEVIAL_PP                     NUMBER,
+  EQUILIBRIO_ECONOMICO_PP       NUMBER,
+  POLCA_CP                      NUMBER,
+  FCM_CP                        NUMBER,
+  SEVIAL_CP                     NUMBER,
+  EQUILIBRIO_ECONOMICO_CP       NUMBER,
+  CONCESIONARIO_S_CC            VARCHAR2(16),
+  FONDO_COB_CONCESIONARIO_S_CC  VARCHAR2(16),
+  FONDO_COB_SIMIT_S_CC          VARCHAR2(16),
+  SIMIT_S_CC                    VARCHAR2(16),
+  EQUILIBRIO_ECONOMICO_S_CC     VARCHAR2(16),
+  CONCESIONARIO_PM_CC           VARCHAR2(16),
+  FONDO_COB_CONCESIONARIO_PM_CC VARCHAR2(16),
+  FONDO_COB_SIMIT_PM_CC         VARCHAR2(16),
+  EQUILIBRIO_ECONOMICO_PM_CC    VARCHAR2(16),
+  SIMIT_PP_CC                   VARCHAR2(16),
+  SEVIAL_PP_CC                  VARCHAR2(16),
+  EQUILIBRIO_ECONOMICO_PP_CC    VARCHAR2(16),
+  POLCA_CP_CC                   VARCHAR2(16),
+  FCM_CP_CC                     VARCHAR2(16),
+  SEVIAL_CP_CC                  VARCHAR2(16),
+  EQUILIBRIO_ECONOMICO_CP_CC    VARCHAR2(16),
+  SIMIT_PM                      NUMBER,
+  SIMIT_PM_CC                   VARCHAR2(16),
+  CTACON_GAS                    VARCHAR2(16),
+  CTACON_ING                    VARCHAR2(16),
+  CONCESIONARIO_S_CC_EXT        VARCHAR2(16),
+  FONCOB_CONCES_S_CC_EXT        VARCHAR2(16),
+  FONCOB_SIMIT_S_CC_EXT         VARCHAR2(16),
+  SIMIT_S_CC_EXT                VARCHAR2(16),
+  EQUIL_ECON_S_CC_EXT           VARCHAR2(16),
+  CONCESIONARIO_PM_CC_EXT       VARCHAR2(16),
+  FONCOB_CONCES_PM_CC_EXT       VARCHAR2(16),
+  FONCOB_SIMIT_PM_CC_EXT        VARCHAR2(16),
+  EQUIL_ECON_PM_CC_EXT          VARCHAR2(16),
+  SIMIT_PP_CC_EXT               VARCHAR2(16),
+  SEVIAL_PP_CC_EXT              VARCHAR2(16),
+  EQUIL_ECON_PP_CC_EXT          VARCHAR2(16),
+  POLCA_CP_CC_EXT               VARCHAR2(16),
+  FCM_CP_CC_EXT                 VARCHAR2(16),
+  SEVIAL_CP_CC_EXT              VARCHAR2(16),
+  EQUIL_ECON_CP_CC_EXT          VARCHAR2(16),
+  SIMIT_PM_CC_EXT               VARCHAR2(16)
+)
+;
+comment on column P_DISPERSION_CONCESIONARIO.IDCONCESIONARIO
+  is 'id concesionario';
+comment on column P_DISPERSION_CONCESIONARIO.CONCESIONARIO_S
+  is 'porcentaje  concesionario simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_CONCESIONARIO_S
+  is 'porcentaje  fondo cobertura simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_SIMIT_S
+  is 'porcentaje  fondo cobertura fcm simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_S
+  is 'porcentaje fcm simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_S
+  is 'porcentaje equilibrio economico simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.CONCESIONARIO_PM
+  is 'porcentaje  concesionario polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_CONCESIONARIO_PM
+  is 'porcentaje  fondo concesionario polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_SIMIT_PM
+  is 'porcentaje  fondo cobertura polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_PM
+  is 'porcentaje  equilibrio economico polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_PP
+  is 'porcentaje simit polca polca 5%';
+comment on column P_DISPERSION_CONCESIONARIO.SEVIAL_PP
+  is 'porcentaje sevial polca polca 5%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_PP
+  is 'porcentaje equilibrio economico polca polca 5%';
+comment on column P_DISPERSION_CONCESIONARIO.POLCA_CP
+  is 'porcentaje polca convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.FCM_CP
+  is 'porcentaje fcm convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.SEVIAL_CP
+  is 'porcentaje sevial convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_CP
+  is 'porcentaje equilibrio ecomico convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.CONCESIONARIO_S_CC
+  is 'centro costo  concesionario simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_CONCESIONARIO_S_CC
+  is 'centro costo  fondo cobertura simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_SIMIT_S_CC
+  is 'centro costo  fondo cobertura fcm simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_S_CC
+  is 'centro costo fcm simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_S_CC
+  is 'centro costo equilibrio economico simit 10%';
+comment on column P_DISPERSION_CONCESIONARIO.CONCESIONARIO_PM_CC
+  is 'centro costo  concesionario polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_CONCESIONARIO_PM_CC
+  is 'centro costo  fondo cobertura concesionario polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.FONDO_COB_SIMIT_PM_CC
+  is 'centro costo  fondo cobertura fcm concesionario polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_PM_CC
+  is 'centro costo equilibrio concesionario polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_PP_CC
+  is 'centro costo simit polca polca 5%';
+comment on column P_DISPERSION_CONCESIONARIO.SEVIAL_PP_CC
+  is 'centro costo sevial polca polca 5%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_PP_CC
+  is 'centro costo equilibrio polca polca 5%';
+comment on column P_DISPERSION_CONCESIONARIO.POLCA_CP_CC
+  is 'centro costo polca convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.FCM_CP_CC
+  is 'centro costo fcm convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.SEVIAL_CP_CC
+  is 'centro costo sevial convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.EQUILIBRIO_ECONOMICO_CP_CC
+  is 'centro costo equilibrio convenio polca 45%';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_PM
+  is 'porcentaje FCM polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_PM_CC
+  is 'centro costo FCM polca municipio 5%';
+comment on column P_DISPERSION_CONCESIONARIO.CTACON_GAS
+  is 'Cuenta contable gastos';
+comment on column P_DISPERSION_CONCESIONARIO.CTACON_ING
+  is 'Cuenta contable ingresos';
+comment on column P_DISPERSION_CONCESIONARIO.CONCESIONARIO_S_CC_EXT
+  is 'centro costo  concesionario simit 10% externo';
+comment on column P_DISPERSION_CONCESIONARIO.FONCOB_CONCES_S_CC_EXT
+  is 'centro costo  fondo cobertura simit 10% externo';
+comment on column P_DISPERSION_CONCESIONARIO.FONCOB_SIMIT_S_CC_EXT
+  is 'centro costo  fondo cobertura fcm simit 10% externo';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_S_CC_EXT
+  is 'centro costo fcm simit 10% externo';
+comment on column P_DISPERSION_CONCESIONARIO.EQUIL_ECON_S_CC_EXT
+  is 'centro costo equilibrio economico simit 10% externo';
+comment on column P_DISPERSION_CONCESIONARIO.CONCESIONARIO_PM_CC_EXT
+  is 'centro costo  concesionario polca municipio 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.FONCOB_CONCES_PM_CC_EXT
+  is 'centro costo  fondo cobertura concesionario polca municipio 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.FONCOB_SIMIT_PM_CC_EXT
+  is 'centro costo  fondo cobertura fcm concesionario polca municipio 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.EQUIL_ECON_PM_CC_EXT
+  is 'centro costo equilibrio concesionario polca municipio 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_PP_CC_EXT
+  is 'centro costo simit polca polca 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.SEVIAL_PP_CC_EXT
+  is 'centro costo sevial polca polca 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.EQUIL_ECON_PP_CC_EXT
+  is 'centro costo equilibrio polca polca 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.POLCA_CP_CC_EXT
+  is 'centro costo polca convenio polca 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.FCM_CP_CC_EXT
+  is 'centro costo fcm convenio polca 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.SEVIAL_CP_CC_EXT
+  is 'centro costo sevial convenio polca 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.EQUIL_ECON_CP_CC_EXT
+  is 'centro costo equilibrio convenio polca 5% externo';
+comment on column P_DISPERSION_CONCESIONARIO.SIMIT_PM_CC_EXT
+  is 'centro costo FCM polca polca 5% externo';
+alter table P_DISPERSION_CONCESIONARIO
+  add constraint PK_P_DISPERSION_CONCESIONARIO primary key (IDCONCESIONARIO);
+alter table P_DISPERSION_CONCESIONARIO
+  add constraint FK_IDCONCESIONARIO_PDC foreign key (IDCONCESIONARIO)
+  references CONCESIONARIO (IDCONCESIONARIO);
+

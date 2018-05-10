@@ -1,0 +1,89 @@
+create table NOVVALIDADOR_FECHA
+(
+  IDMUNICIPIO              CHAR(8) not null,
+  IDVALIDADOR              CHAR(3) not null,
+  FECHA_INI                DATE,
+  FECHA_FIN                DATE,
+  INDTIPO                  VARCHAR2(5) not null,
+  P_MUNICIPIO              NUMBER,
+  P_FCM_CONTRAVENCIONAL    NUMBER,
+  P_CONCES_CONTRAVENCIONAL NUMBER,
+  P_ACUERDOPAGO            NUMBER,
+  NIT_TERCERO1             VARCHAR2(10),
+  BASE_TERCERO1            NUMBER,
+  IND_BASE_TERCERO1        NUMBER,
+  NIT_TERCERO2             VARCHAR2(10),
+  BASE_TERCERO2            NUMBER,
+  IND_BASE_TERCERO2        NUMBER,
+  TIPONOV                  CHAR(2) not null,
+  NUMERONOV                NUMBER not null,
+  FECHANOV                 DATE not null,
+  USUARIONOV               NUMBER not null,
+  USUARIOVAL               NUMBER,
+  FECHAVAL                 DATE,
+  FECHAACT                 DATE not null,
+  ESTADONOV                CHAR(10) not null,
+  FIRMA1                   VARCHAR2(250) not null,
+  FIRMA2                   VARCHAR2(250) not null,
+  USUARIOANUL              NUMBER,
+  FECHAANUL                DATE
+)
+;
+comment on column NOVVALIDADOR_FECHA.IDMUNICIPIO
+  is 'Municipio';
+comment on column NOVVALIDADOR_FECHA.IDVALIDADOR
+  is 'validador';
+comment on column NOVVALIDADOR_FECHA.FECHA_INI
+  is 'fecha inicial';
+comment on column NOVVALIDADOR_FECHA.FECHA_FIN
+  is 'fecha final';
+comment on column NOVVALIDADOR_FECHA.INDTIPO
+  is 'tipo comparendo (SIMIT, POLCA)';
+comment on column NOVVALIDADOR_FECHA.P_MUNICIPIO
+  is 'porcentaje municipio';
+comment on column NOVVALIDADOR_FECHA.P_FCM_CONTRAVENCIONAL
+  is 'porcentaje fcm contravencional';
+comment on column NOVVALIDADOR_FECHA.P_CONCES_CONTRAVENCIONAL
+  is 'porcentaje concesionario contravencional';
+comment on column NOVVALIDADOR_FECHA.P_ACUERDOPAGO
+  is 'porcentaje de acuerdo de pago';
+comment on column NOVVALIDADOR_FECHA.NIT_TERCERO1
+  is 'nit tercero 1';
+comment on column NOVVALIDADOR_FECHA.BASE_TERCERO1
+  is 'base tercero 1';
+comment on column NOVVALIDADOR_FECHA.IND_BASE_TERCERO1
+  is 'indicador base tercero 1';
+comment on column NOVVALIDADOR_FECHA.NIT_TERCERO2
+  is 'nit tercero 2';
+comment on column NOVVALIDADOR_FECHA.BASE_TERCERO2
+  is 'base tercero 2';
+comment on column NOVVALIDADOR_FECHA.IND_BASE_TERCERO2
+  is 'base tercero 2';
+comment on column NOVVALIDADOR_FECHA.TIPONOV
+  is 'Tipo de Novedad 01-Adicionar Municipio, 02:Actualizar Municipio';
+comment on column NOVVALIDADOR_FECHA.FECHANOV
+  is 'Fecha de novedad';
+comment on column NOVVALIDADOR_FECHA.USUARIONOV
+  is 'Usuario que reporta novedad';
+comment on column NOVVALIDADOR_FECHA.USUARIOVAL
+  is 'Usuario que valida novedad';
+comment on column NOVVALIDADOR_FECHA.FECHAVAL
+  is 'Fecha validacion novedad';
+comment on column NOVVALIDADOR_FECHA.FECHAACT
+  is 'FechaActivacionNovedad';
+comment on column NOVVALIDADOR_FECHA.ESTADONOV
+  is 'Estado Novedad: INGRESADA, VALIDADA, ACTIVA,ANULADA';
+comment on column NOVVALIDADOR_FECHA.FIRMA1
+  is 'Nombre de la primera firma';
+comment on column NOVVALIDADOR_FECHA.FIRMA2
+  is 'Nombre de la segunda firma';
+comment on column NOVVALIDADOR_FECHA.USUARIOANUL
+  is 'Usuario que anula la novedad';
+comment on column NOVVALIDADOR_FECHA.FECHAANUL
+  is 'Fecha anulacion novedad';
+alter table NOVVALIDADOR_FECHA
+  add constraint PK_NOVVALIDADOR_FECHA primary key (TIPONOV, NUMERONOV);
+alter table NOVVALIDADOR_FECHA
+  add constraint CH_INDTIPO_NOVVF
+  check (INDTIPO IN ('SIMIT','POLCA'));
+

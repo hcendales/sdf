@@ -1,0 +1,41 @@
+create table RECAUDO_LOCAL_TEMP
+(
+  IDBANCO        CHAR(2),
+  CTA_RECAUDO    VARCHAR2(16),
+  INDTIPO        VARCHAR2(5),
+  FEC_CORTE      DATE,
+  FEC_TRAN       DATE,
+  OFICINA_ORIGEN VARCHAR2(250),
+  VALOR_EFECTIVO NUMBER,
+  VALOR_CHEQUE   NUMBER,
+  VALOR_TOTAL    NUMBER,
+  NIT_M          VARCHAR2(10),
+  IDMUNICIPIO    CHAR(8),
+  P_CONSIGNADO   NUMBER
+)
+;
+comment on column RECAUDO_LOCAL_TEMP.IDBANCO
+  is 'banco';
+comment on column RECAUDO_LOCAL_TEMP.CTA_RECAUDO
+  is 'cuenta de recaudo';
+comment on column RECAUDO_LOCAL_TEMP.INDTIPO
+  is 'tipo de recaudo (Simit , Polca)';
+comment on column RECAUDO_LOCAL_TEMP.FEC_CORTE
+  is 'Fecha de corte';
+comment on column RECAUDO_LOCAL_TEMP.FEC_TRAN
+  is 'fecha de transaccion';
+comment on column RECAUDO_LOCAL_TEMP.OFICINA_ORIGEN
+  is 'oficina origen';
+comment on column RECAUDO_LOCAL_TEMP.VALOR_EFECTIVO
+  is 'valor efectivo';
+comment on column RECAUDO_LOCAL_TEMP.VALOR_CHEQUE
+  is 'valor cheque';
+comment on column RECAUDO_LOCAL_TEMP.VALOR_TOTAL
+  is 'valor total';
+comment on column RECAUDO_LOCAL_TEMP.NIT_M
+  is 'nit municipio';
+comment on column RECAUDO_LOCAL_TEMP.IDMUNICIPIO
+  is 'municipio';
+comment on column RECAUDO_LOCAL_TEMP.P_CONSIGNADO
+  is 'porcentaje consignado';
+

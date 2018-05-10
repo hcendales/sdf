@@ -1,0 +1,32 @@
+return confirmar(this);
+
+function confirmar(formObj) { 
+
+    document.getElementById("form1:bconsultar").value = "Enviando...";
+    document.getElementById("form1:bconsultar").disabled = true;
+
+    document.getElementById("form1:bcancelar").disabled = false;
+    
+    return true;
+
+
+}
+
+var statSend = false;
+function checkSubmit() {
+    if (!statSend) {
+        statSend = true;
+        return true;
+    } else {
+       alert("El formulario ya se esta enviando...");
+       return false;
+    }
+    if(!confirm("Desea eliminar registro ?")) 
+    { 
+      return false;
+    }
+
+}
+
+
+

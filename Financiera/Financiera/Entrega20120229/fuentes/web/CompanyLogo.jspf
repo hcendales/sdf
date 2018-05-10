@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div style="height: 120px; width: 720px; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://www.sun.com/web/ui">
+    <br/>
+    <f:subview id="CompanyLogo">
+        <ui:image binding="#{CompanyLogo.image2}" id="image2" style="left: 816px; top: 0px; position: absolute" url="/resources/logo_fcm.gif"/>
+        <ui:messageGroup binding="#{CompanyLogo.messageGroup}" id="messageGroup" showDetail="true" showSummary="false" style="height: 103px; left: 360px; top: 10px; position: absolute; width: 286px"/>
+        <ui:button binding="#{CompanyLogo.btSalir1}" id="btSalir1" imageURL="/resources/salir.gif" onClick="return false;"
+            style="height: 21px; left: 856px; top: 72px; position: absolute; width: 85px" text="Salir"/>
+        <br/>
+        <ui:button action="#{CompanyLogo.btSalir_action}" binding="#{CompanyLogo.btSalir}" id="btSalir" imageURL="/resources/salir.gif"
+            onClick="return confirmar(this);&#xa;&#xa;function confirmar(formObj) { &#xa;&#xa;    if(!confirm(&quot;Desea salir ?&quot;)) &#xa;    { &#xa;      return false;&#xa;    }&#xa;&#xa;}&#xa;"
+            style="height: 21px; left: 856px; top: 72px; position: absolute; width: 85px" text="Salir"/>
+        <ui:image binding="#{CompanyLogo.image3}" height="122" id="image3" style="left: 48px; top: 0px; position: absolute" url="/resources/logo_simit.gif" width="144"/>
+    </f:subview>
+</div>

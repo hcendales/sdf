@@ -1,0 +1,13 @@
+create table CONCEPTO
+(
+  IDCONCEPTO NUMBER not null,
+  NOMBRE     VARCHAR2(50)
+)
+;
+comment on column CONCEPTO.IDCONCEPTO
+  is 'Id concepto de liquidacion';
+comment on column CONCEPTO.NOMBRE
+  is 'Nombre del concepto de liquidacion';
+alter table CONCEPTO
+  add constraint PK_IDCONCEPTO primary key (IDCONCEPTO);
+

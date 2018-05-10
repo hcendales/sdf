@@ -1,0 +1,37 @@
+create table RECAUDO_LOCAL_AJUSTES
+(
+  IDBANCO                  CHAR(2),
+  CTA_RECAUDO              VARCHAR2(16),
+  INDTIPO                  VARCHAR2(5),
+  FEC_CORTE                DATE,
+  FEC_TRAN                 DATE,
+  VALOR_TOTAL              NUMBER,
+  IDMUNICIPIO              CHAR(8),
+  PERIODO                  CHAR(6),
+  ID_RECAUDO_LOCAL_AJUSTES NUMBER not null,
+  P_CONSIGNADO             NUMBER
+)
+;
+comment on column RECAUDO_LOCAL_AJUSTES.IDBANCO
+  is 'Banco';
+comment on column RECAUDO_LOCAL_AJUSTES.CTA_RECAUDO
+  is 'cuenta de recaudo';
+comment on column RECAUDO_LOCAL_AJUSTES.INDTIPO
+  is 'tipo de recaudo (SIMIT, POLCA)';
+comment on column RECAUDO_LOCAL_AJUSTES.FEC_CORTE
+  is 'fecha de corte';
+comment on column RECAUDO_LOCAL_AJUSTES.FEC_TRAN
+  is 'fecha de transaccion';
+comment on column RECAUDO_LOCAL_AJUSTES.VALOR_TOTAL
+  is 'valor total del ajuste';
+comment on column RECAUDO_LOCAL_AJUSTES.IDMUNICIPIO
+  is 'municipio del recaudo';
+comment on column RECAUDO_LOCAL_AJUSTES.PERIODO
+  is 'periodo de consignacion';
+comment on column RECAUDO_LOCAL_AJUSTES.ID_RECAUDO_LOCAL_AJUSTES
+  is 'autonumerico';
+comment on column RECAUDO_LOCAL_AJUSTES.P_CONSIGNADO
+  is 'porcentaje consignado';
+alter table RECAUDO_LOCAL_AJUSTES
+  add constraint PK_IDRECUADO_LOCAL_AJUSTES primary key (ID_RECAUDO_LOCAL_AJUSTES);
+

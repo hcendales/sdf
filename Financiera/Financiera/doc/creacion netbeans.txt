@@ -1,0 +1,32 @@
+COMO INICIAR EL PROYECTO FCM
+
+EN WINDOWS VISTA BORRAR LAS SUBCARPETAS
+C:\Windows\System32\config\systemprofile\.netbeans
+
+EN WINDOWS 7 BORRAR LAS SUBCARPETAS
+C:\Users\user\.netbeans\5.5.1
+
+
+CREAR BIBLIOTECA ORACLE
+oraclexe\app\oracle\product\10.2.0\server\jdbc\lib\classes12.zip
+
+
+CREAR LIBRERIA JASPER202
+commons-beanutils-1.7
+commons-collections-2.1
+commons-digester-1.7
+commons-logging-1.0.2
+itext-1.3.1
+jasperreports-2.0.2
+poi-3.0.1-FINAL-20070705
+
+
+
+
+RESOLVER DATASOURCE
+jdbc:oracle:thin:@192.168.1.235:1521:simit9i
+
+
+Colocar clases12 en
+C:\Program Files (x86)\netbeans-5.5.1\enterprise3\apache-tomcat-5.5.17\common\lib
+C:\Program Files (x86)\JasperSoft\iReport-2.0.5\lib

@@ -1,0 +1,34 @@
+create table HIST_VOBO
+(
+  IDVOBO      NUMBER not null,
+  TIPO        VARCHAR2(50),
+  ACCION      VARCHAR2(50),
+  USUARIO     NUMBER,
+  FECHA       DATE,
+  REFERENCIA1 VARCHAR2(50),
+  REFERENCIA2 VARCHAR2(50),
+  REFERENCIA3 NUMBER,
+  REFERENCIA4 NUMBER
+)
+;
+comment on column HIST_VOBO.IDVOBO
+  is 'numero unico de vobo';
+comment on column HIST_VOBO.TIPO
+  is 'tipo de vobo';
+comment on column HIST_VOBO.ACCION
+  is 'APROBO O RECHAZO';
+comment on column HIST_VOBO.USUARIO
+  is 'usuario del vobo';
+comment on column HIST_VOBO.FECHA
+  is 'fecha del vobo';
+comment on column HIST_VOBO.REFERENCIA1
+  is 'referencia 1';
+comment on column HIST_VOBO.REFERENCIA2
+  is 'referencia 2';
+comment on column HIST_VOBO.REFERENCIA3
+  is 'referencia 3';
+comment on column HIST_VOBO.REFERENCIA4
+  is 'referencia 4';
+alter table HIST_VOBO
+  add constraint PK_HIST_VOBO primary key (IDVOBO);
+

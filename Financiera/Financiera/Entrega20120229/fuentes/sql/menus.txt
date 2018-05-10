@@ -1,0 +1,67 @@
+Modulo parametros:
+16 Parametros Contabilidad
+/faces/Parconta.jsp
+Administrador, Financiero
+
+Modulo recaudo local
+09 Consultar depositos
+/faces/ConsultaDepos.jsp
+Administrador, Financiero, Interventoria Simit, Interventoria Polca, Concesionario Simit, Concesionario Polca
+
+10 Identificacion Depositos
+/faces/IdentificacionDepos.jsp
+Administrador, Financiero
+
+11 Visto Bueno Simit
+/faces/VistoBuenoS.jsp
+
+
+Administrador, Interventoria Simit
+
+12 Visto Bueno Polca
+/faces/VistoBuenoP.jsp
+Administrador, Interventoria Polca
+
+13 Autorizar reproceso
+/faces/AprobarReprocesoLoc.jsp
+Administrador
+
+14 Transferir
+/faces/TransferirLocal.jsp
+Administrador, Financiero
+
+15 Contabilidad Recaudo
+/faces/RptRecLocContabilidad.jsp
+Administrador, Financiero
+
+16 Contabilidad Trn sin Identificar
+/faces/contabiliza_trf_siniden.jsp
+Administrador, Financiero
+
+17 Contabilidad Pago
+/faces/RptPagLocContabilidad.jsp
+Administrador, Financiero
+
+18 Envio Banco
+/faces/EnvioBancoLocal.jsp
+Administrador
+
+Modulo Recaudo Externo
+16 Reproceso distribucion
+/faces/ReproLiq.jsp
+Administrador
+
+17 Reporte Pago OT Comparativo
+/faces/ReporteDistOTCom.jsp
+Administrador, Financiero, Interventoria Simit, Interventoria Polca, Concesionario Simit, Concesionario Polca
+
+18 Reporte pago x Identificacion
+/faces/ReporteDistOTIde.jsp
+Administrador, Financiero, Interventoria Simit, Interventoria Polca, Concesionario Simit, Concesionario Polca
+
+Modulo devoluciones banco
+03 Contabilidad rechazos ach
+/faces/RptPagDevAch.jsp
+Administrador, Financiero
+
+FRFFF

@@ -1,0 +1,17 @@
+create table ROL
+(
+  ROLID     NUMBER,
+  NAMEROL   VARCHAR2(100),
+  ENABLEROL NUMBER,
+  ENABLEMOD NUMBER
+)
+;
+comment on column ROL.ROLID
+  is 'autonumerico';
+comment on column ROL.NAMEROL
+  is 'nombre del rol';
+comment on column ROL.ENABLEROL
+  is 'activo';
+comment on column ROL.ENABLEMOD
+  is 'Modificar datos';
+

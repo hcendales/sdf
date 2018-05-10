@@ -1,0 +1,6 @@
+create table CORREO
+(
+  TEXTO VARCHAR2(2000)
+)
+;
+

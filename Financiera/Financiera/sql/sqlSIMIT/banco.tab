@@ -1,0 +1,29 @@
+create table BANCO
+(
+  IDBANCO        CHAR(2) not null,
+  NOMBRE         VARCHAR2(50),
+  RESPONSABLE    VARCHAR2(100),
+  CARGO          VARCHAR2(50),
+  CORREO         VARCHAR2(500),
+  TELEFONO       VARCHAR2(50),
+  DIRCORRES      VARCHAR2(500),
+  CUENTACONTABLE VARCHAR2(16)
+)
+;
+comment on column BANCO.IDBANCO
+  is 'Codigo del banco';
+comment on column BANCO.NOMBRE
+  is 'Nombre del banco';
+comment on column BANCO.RESPONSABLE
+  is 'Responsable principal en el banco';
+comment on column BANCO.CARGO
+  is 'Cargo del responsable en el banco';
+comment on column BANCO.CORREO
+  is 'Correo electronico del responsable';
+comment on column BANCO.TELEFONO
+  is 'Telefono de contacto del responsable';
+comment on column BANCO.DIRCORRES
+  is 'Direcci¿n de correspondencia';
+alter table BANCO
+  add constraint PK_IDBANCO primary key (IDBANCO);
+

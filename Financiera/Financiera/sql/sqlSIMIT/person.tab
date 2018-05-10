@@ -1,0 +1,26 @@
+create table PERSON
+(
+  IDPERSON     NUMBER,
+  NAMEPERSON   VARCHAR2(100),
+  JOBTITLE     VARCHAR2(100),
+  ENABLEPERSON NUMBER,
+  LASTUPDATE   DATE,
+  MAIL         VARCHAR2(100),
+  PASSWORD     VARCHAR2(16)
+)
+;
+comment on column PERSON.IDPERSON
+  is 'id del funcionario';
+comment on column PERSON.NAMEPERSON
+  is 'nombre del funcionario';
+comment on column PERSON.JOBTITLE
+  is 'cargo del funcinario';
+comment on column PERSON.ENABLEPERSON
+  is 'funcionario activo';
+comment on column PERSON.LASTUPDATE
+  is 'ultima actualizacion';
+comment on column PERSON.MAIL
+  is 'correo electronico';
+comment on column PERSON.PASSWORD
+  is 'clave';
+

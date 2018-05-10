@@ -1,0 +1,88 @@
+create table RECAUDO_EXTERNO_DISP_TOT
+(
+  FEC_CORTE_INI        DATE,
+  FEC_CORTE_FIN        DATE,
+  FEC_DISPERSION       DATE,
+  ID_CONCESIONARIO_LIQ CHAR(2),
+  ORDEN                NUMBER,
+  CONCEPTO             VARCHAR2(250),
+  ORI_IDBANCO          CHAR(2),
+  ORI_TIPOCUENTA       VARCHAR2(3),
+  ORI_CUENTA           VARCHAR2(16),
+  ORI_NIT              VARCHAR2(10),
+  DES_IDBANCO          CHAR(2),
+  DES_TIPOCUENTA       VARCHAR2(3),
+  DES_CUENTA           VARCHAR2(250),
+  DES_NIT              VARCHAR2(10),
+  INDTIPO              VARCHAR2(5),
+  USUARIO_PROCESO      VARCHAR2(20),
+  FECHA_PROCESO        DATE,
+  VALOR                NUMBER,
+  DEB_CTA_CON          VARCHAR2(16),
+  DEB_CEN_COS          VARCHAR2(16),
+  DEB_NIT_TER          VARCHAR2(16),
+  CRE_CTA_CON          VARCHAR2(16),
+  CRE_CEN_COS          VARCHAR2(16),
+  CRE_NIT_TER          VARCHAR2(16),
+  CONCEPTO_CON         VARCHAR2(250),
+  ID_CONCESIONARIO_PRO CHAR(2),
+  IDMUNICIPIO          CHAR(8),
+  ENVIADOBANCO         NUMBER,
+  REFERENCIATRF        NUMBER
+)
+;
+comment on column RECAUDO_EXTERNO_DISP_TOT.FEC_CORTE_INI
+  is 'fecha de corte inicial';
+comment on column RECAUDO_EXTERNO_DISP_TOT.FEC_CORTE_FIN
+  is 'fecha de corte final';
+comment on column RECAUDO_EXTERNO_DISP_TOT.FEC_DISPERSION
+  is 'fecha de dispersion';
+comment on column RECAUDO_EXTERNO_DISP_TOT.ID_CONCESIONARIO_LIQ
+  is 'concesionario liquidador';
+comment on column RECAUDO_EXTERNO_DISP_TOT.ORDEN
+  is 'orden en el comprobante';
+comment on column RECAUDO_EXTERNO_DISP_TOT.CONCEPTO
+  is 'concepto contable';
+comment on column RECAUDO_EXTERNO_DISP_TOT.ORI_IDBANCO
+  is 'banco origen';
+comment on column RECAUDO_EXTERNO_DISP_TOT.ORI_TIPOCUENTA
+  is 'tipo de cuenta origen (AHO, CTE)';
+comment on column RECAUDO_EXTERNO_DISP_TOT.ORI_CUENTA
+  is 'cuenta origen';
+comment on column RECAUDO_EXTERNO_DISP_TOT.ORI_NIT
+  is 'nit cuenta origen';
+comment on column RECAUDO_EXTERNO_DISP_TOT.DES_IDBANCO
+  is 'banco destino';
+comment on column RECAUDO_EXTERNO_DISP_TOT.DES_TIPOCUENTA
+  is 'tipo de cuenta destino (AHO, CTE)';
+comment on column RECAUDO_EXTERNO_DISP_TOT.DES_CUENTA
+  is 'cuenta destino';
+comment on column RECAUDO_EXTERNO_DISP_TOT.DES_NIT
+  is 'nit cuenta destino';
+comment on column RECAUDO_EXTERNO_DISP_TOT.INDTIPO
+  is 'tipo de recuado (SIMIT, POLCA)';
+comment on column RECAUDO_EXTERNO_DISP_TOT.USUARIO_PROCESO
+  is 'usuario que proceso';
+comment on column RECAUDO_EXTERNO_DISP_TOT.FECHA_PROCESO
+  is 'fecha de proceso';
+comment on column RECAUDO_EXTERNO_DISP_TOT.VALOR
+  is 'valor transferencia';
+comment on column RECAUDO_EXTERNO_DISP_TOT.DEB_CTA_CON
+  is 'cuenta contable debito';
+comment on column RECAUDO_EXTERNO_DISP_TOT.DEB_CEN_COS
+  is 'centro de costo debito';
+comment on column RECAUDO_EXTERNO_DISP_TOT.DEB_NIT_TER
+  is 'nit tercero debito';
+comment on column RECAUDO_EXTERNO_DISP_TOT.CRE_CTA_CON
+  is 'cuenta contable credito';
+comment on column RECAUDO_EXTERNO_DISP_TOT.CRE_CEN_COS
+  is 'centro de costo credito';
+comment on column RECAUDO_EXTERNO_DISP_TOT.CRE_NIT_TER
+  is 'nit tercero credito';
+comment on column RECAUDO_EXTERNO_DISP_TOT.CONCEPTO_CON
+  is 'concepto contable';
+comment on column RECAUDO_EXTERNO_DISP_TOT.ID_CONCESIONARIO_PRO
+  is 'concecionario propietario';
+comment on column RECAUDO_EXTERNO_DISP_TOT.IDMUNICIPIO
+  is 'municipio';
+

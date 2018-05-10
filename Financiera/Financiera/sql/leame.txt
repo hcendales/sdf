@@ -1,0 +1,12 @@
+Favor ejecutar los script en este orden
+
+Inicar sesion con un usuario administrador
+1_creacionUsuario.sql
+
+Iniciar sesion con usuario simit 
+2_creacionObjetos.sql
+
+Iniciar sesion con usuario simit 
+3_parametrizacion.sql
+
+

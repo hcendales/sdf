@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/NovedadSimit">
+  <!-- conexion fcm -->
+  <!--<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="30" maxIdle="5" maxWait="15000" name="jdbc/dataSource" password="Simit123" removeAbandoned="true" removeAbandonedTimeout="30" type="javax.sql.DataSource" url="jdbc:oracle:thin:@172.16.2.15:1521:simit9i" username="SIMIT"/> -->
+  <!-- conexion produccion -->
+  <!--<ResourceLink global="jdbc/dataSourceFinanciera" name="jdbc/dataSource" type="javax.sql.DataSource"/>-->
+  <!-- conexion local  -->
+  <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="30" maxIdle="5" maxWait="15000" name="jdbc/dataSource" password="SIMIT123" removeAbandoned="true" removeAbandonedTimeout="30" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="SIMIT"/>
+  <!-- conexion a rac -->
+  <!--Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="30" maxIdle="5" maxWait="15000" name="jdbc/dataSourceProd" password="simit123" removeAbandoned="true" removeAbandonedTimeout="30" type="javax.sql.DataSource" url="jdbc:oracle:thin:@                   (DESCRIPTION =                      (FAILOVER=on)                     (LOAD_BALANCE=on)                     (ADDRESS_LIST=                         (ADDRESS=(PROTOCOL=tcp)(HOST=172.168.100.11)(PORT=1521))                         (ADDRESS=(PROTOCOL=tcp)(HOST=172.168.100.12)(PORT=1521))                     )                     (CONNECT_DATA=                         (SERVER = DEDICATED)                         (SERVICE_NAME= simit )                         (FAILOVER_MODE=                             (TYPE=session)                             (METHOD=basic)                             (RETRIES=5)                             (DELAY=5)                         )                     )                   )" username="simit"/-->
+  <!--<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="20" maxIdle="10" maxWait="-1" name="jdbc/dataSource_1452619497668" password="simit123" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="simit"/>-->
+  <!--  <ResourceLink global="jdbc/dataSource_1234449063711" name="jdbc/dataSource_1234449063711" type="javax.sql.DataSource"/> -->
+  <!--<Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="20" maxIdle="10" maxWait="-1" name="jdbc/dataSource_1452619497668" password="simit123" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="simit"/> -->
+  <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="20" maxIdle="10" maxWait="-1" name="jdbc/dataSource_1504804001749" password="simit123" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="SIMIT"/>
+</Context>

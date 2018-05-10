@@ -1,0 +1,7 @@
+create sequence SEQ_RECAUDO_LOCAL_LIQUIDACION
+minvalue 1
+maxvalue 999999999999999999999999999
+start with 1491604
+increment by 1
+cache 20;
+

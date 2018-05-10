@@ -1,0 +1,6 @@
+grant select on BANCO to SIMITCURSO;
+grant select on CONCESIONARIO to SIMITCURSO;
+grant select on DEPARTAMENTO to SIMITCURSO;
+grant execute on FN_FEC_DISPERSION to SIMITCURSO;
+grant select on MUNICIPIO to SIMITCURSO;
+grant select on RECAUDO_LOCAL_LIQUIDACION to SIMITCURSO;

@@ -1,0 +1,456 @@
+
+Creating table CONCEPTOSIDENTIFICAR
+===================================
+
+create table CONCEPTOSIDENTIFICAR
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Comment created.
+
+
+Comment created.
+
+
+Creating table FUNCIONARIOS_CONCESIONARIO
+=========================================
+
+
+Table created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Creating table MOTIVOAJUSTE
+===========================
+
+
+Table created.
+
+
+Table altered.
+
+
+Creating table MVTOAGRARIO
+==========================
+
+create table MVTOAGRARIO
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Creating table MVTOAGRARIO_TEMP
+===============================
+
+create table MVTOAGRARIO_TEMP
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Creating table MVTOAVVILLAS
+===========================
+
+create table MVTOAVVILLAS
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Creating table MVTOAVVILLAS_TEMP
+================================
+
+create table MVTOAVVILLAS_TEMP
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Creating table MVTOBANCAFE
+==========================
+
+create table MVTOBANCAFE
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Creating table MVTOBANCAFE_TEMP
+===============================
+
+create table MVTOBANCAFE_TEMP
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Creating table MVTODAVIVIENDA
+=============================
+
+
+Table created.
+
+
+Creating table MVTODAVIVIENDA_TEMP
+==================================
+
+
+Table created.
+
+
+Creating table MVTOPOPULAR
+==========================
+
+create table MVTOPOPULAR
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Creating table MVTOPOPULAR_TEMP
+===============================
+
+create table MVTOPOPULAR_TEMP
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Creating table OFICINABANCO
+===========================
+
+create table OFICINABANCO
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+  add constraint FK_OFICINABANCOMUN foreign key (IDMUNICIPIO)
+                                    *
+ERROR at line 2:
+ORA-02275: such a referential constraint already exists in the table 
+
+
+
+Creating table TIPOMVTO
+=======================
+
+
+Table created.
+
+
+Creating table TRXSINIDENTIFICAR
+================================
+
+create table TRXSINIDENTIFICAR
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+comment on column TRXSINIDENTIFICAR.CONCESIONARIOZON
+                                    *
+ERROR at line 1:
+ORA-00904: "CONCESIONARIOZON": invalid identifier 
+
+
+comment on column TRXSINIDENTIFICAR.REFERENCIA
+                                    *
+ERROR at line 1:
+ORA-00904: "REFERENCIA": invalid identifier 
+
+
+  add constraint PK_TRXSINIDENTIFICAR primary key (NUMSECUENCIAREG)
+                                      *
+ERROR at line 2:
+ORA-02260: table can have only one primary key 
+
+
+
+Creating sequence SEQ_IDE
+=========================
+
+create sequence SEQ_IDE
+                *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Creating sequence SEQ_MVTO
+==========================
+
+create sequence SEQ_MVTO
+                *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Creating view VW_CONCESIONARIOTRF
+=================================
+
+  group by t.concesionariozon , c.nombre
+           *
+ERROR at line 9:
+ORA-00904: "T"."CONCESIONARIOZON": invalid identifier 
+
+
+
+Creating view VW_CUENTATRF
+==========================
+
+
+View created.
+
+
+Creating view VW_MUNICIPIOTRF
+=============================
+
+
+View created.
+
+
+Creating view VW_PCONSIGANDO
+============================
+
+
+View created.
+
+
+Creating view VW_PERIODOTRF
+===========================
+
+
+View created.
+
+
+Creating view VW_VALORTRF
+=========================
+
+
+View created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+

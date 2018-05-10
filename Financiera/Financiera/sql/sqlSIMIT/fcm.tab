@@ -1,0 +1,139 @@
+create table FCM
+(
+  NIT_FCM                  VARCHAR2(10) not null,
+  CORREO                   VARCHAR2(500),
+  CTA_DISP_S_BANCO         CHAR(2),
+  CTA_DISP_S_TIPO_CTA      VARCHAR2(3),
+  CTA_DISP_S_CTA           VARCHAR2(16),
+  CTA_DISP_P_BANCO         CHAR(2),
+  CTA_DISP_P_TIPO_CTA      VARCHAR2(3),
+  CTA_DISP_P_CTA           VARCHAR2(16),
+  IVA                      NUMBER,
+  RETENCION_FUENTE         NUMBER,
+  IMPUESTO_TIMBRE_TERCERO  NUMBER,
+  IMPUESTO_TIMBRE_FCM      NUMBER,
+  DIRECTOR_EJECUTIVO       VARCHAR2(250),
+  DIRECTOR_NACIONAL        VARCHAR2(250),
+  CONTADOR_GENERAL         VARCHAR2(250),
+  COORDINADOR_FINANCIERO   VARCHAR2(250),
+  NIT_POLCA                VARCHAR2(10),
+  NIT_SEVIAL               VARCHAR2(10),
+  CTACON_PUENTE            VARCHAR2(16),
+  CTACON_FONDO_COBERTURA   VARCHAR2(16),
+  CTACON_POLCA             VARCHAR2(16),
+  CTACON_FCM               VARCHAR2(16),
+  CTA_DISP_PA_BANCO        CHAR(2),
+  CTA_DISP_PA_TIPO_CTA     VARCHAR2(3),
+  CTA_DISP_PA_CTA          VARCHAR2(16),
+  CTACON_FCMA              VARCHAR2(16),
+  CTACON_INGRESO           VARCHAR2(16),
+  CTACON_IMPUESTOS         VARCHAR2(16),
+  RETEIVA                  NUMBER,
+  TIMBRE_CONTRAVENCIONAL   NUMBER,
+  CTACON_PUENTE_EXT        VARCHAR2(16),
+  M_DIRECTOR_EJECUTIVO     VARCHAR2(250),
+  M_DIRECTOR_NACIONAL      VARCHAR2(250),
+  M_CONTADOR_GENERAL       VARCHAR2(250),
+  M_COORDINADOR_FINANCIERO VARCHAR2(250),
+  DIAS_ACTIVACION          NUMBER,
+  CTA_DISP_AC_BANCO        CHAR(2),
+  CTA_DISP_AC_TIPO_CTA     VARCHAR2(3),
+  CTA_DISP_AC_CTA          VARCHAR2(16),
+  SEGURIDAD_INTEGRADA      NUMBER,
+  URL_SEGURIDAD            VARCHAR2(250),
+  SERVIDORSMTP             VARCHAR2(250)
+)
+;
+comment on column FCM.NIT_FCM
+  is 'NIt FCM';
+comment on column FCM.CORREO
+  is 'Correo de responsable FCM';
+comment on column FCM.CTA_DISP_S_BANCO
+  is 'Banco de transferencias SIMIT';
+comment on column FCM.CTA_DISP_S_TIPO_CTA
+  is 'Tipo de cuenta de transferencias SIMIT (AHO, CTE)';
+comment on column FCM.CTA_DISP_S_CTA
+  is 'Numero de cuenta para transferencias SIMIT';
+comment on column FCM.CTA_DISP_P_BANCO
+  is 'Banco de transferencias POLCA';
+comment on column FCM.CTA_DISP_P_TIPO_CTA
+  is 'Tipo de cuenta de transferencias POLCA (AHO, CTE)';
+comment on column FCM.CTA_DISP_P_CTA
+  is 'Numero de cuento para transferencias POLCA';
+comment on column FCM.IVA
+  is 'porcentaje de IVA ';
+comment on column FCM.RETENCION_FUENTE
+  is 'porcentaje de retencion en la fuente';
+comment on column FCM.IMPUESTO_TIMBRE_TERCERO
+  is 'Impuesto de timbre a terceros';
+comment on column FCM.IMPUESTO_TIMBRE_FCM
+  is 'Impuesto de timbre aplicado a FCM';
+comment on column FCM.DIRECTOR_EJECUTIVO
+  is 'Nombre del director ejecutivo';
+comment on column FCM.DIRECTOR_NACIONAL
+  is 'Nombre del director nacional';
+comment on column FCM.CONTADOR_GENERAL
+  is 'Nombre Contador general';
+comment on column FCM.COORDINADOR_FINANCIERO
+  is 'Nombre coordinador financiero';
+comment on column FCM.NIT_POLCA
+  is 'Nit con digito de POLCA';
+comment on column FCM.NIT_SEVIAL
+  is 'Nit con digito de SEVIAL';
+comment on column FCM.CTACON_PUENTE
+  is 'Cuenta contable puente';
+comment on column FCM.CTACON_FONDO_COBERTURA
+  is 'Cuenta contable para fondo de cobertura';
+comment on column FCM.CTACON_POLCA
+  is 'Cuenta contable asignada a POLCA';
+comment on column FCM.CTACON_FCM
+  is 'Cuenta contable asignada a FCM';
+comment on column FCM.CTA_DISP_PA_BANCO
+  is 'Banco de cuenta financiera para transferencias del 1.8';
+comment on column FCM.CTA_DISP_PA_TIPO_CTA
+  is 'Tipo de cuenta financiera para transferencias del 1.8 (AHO, CTE)';
+comment on column FCM.CTA_DISP_PA_CTA
+  is 'Numero cuenta financiera para transferencias del 1.8';
+comment on column FCM.CTACON_FCMA
+  is 'Cuenta contable FCM 1.8';
+comment on column FCM.CTACON_INGRESO
+  is 'Cuenta contable ingresos';
+comment on column FCM.CTACON_IMPUESTOS
+  is 'Cuenta contable impuestos';
+comment on column FCM.RETEIVA
+  is 'Porcentaje de reteiva';
+comment on column FCM.TIMBRE_CONTRAVENCIONAL
+  is 'Porcentaje timbre contravencional';
+comment on column FCM.CTACON_PUENTE_EXT
+  is 'Cuenta contable puente par arecuado externo';
+comment on column FCM.M_DIRECTOR_EJECUTIVO
+  is 'Correo Del Director Ejecutivo';
+comment on column FCM.M_DIRECTOR_NACIONAL
+  is 'Correo Del Director Ejecutivo';
+comment on column FCM.M_CONTADOR_GENERAL
+  is 'Correo Del Director Ejecutivo';
+comment on column FCM.M_COORDINADOR_FINANCIERO
+  is 'Correo Del Director Ejecutivo';
+comment on column FCM.DIAS_ACTIVACION
+  is 'M¿nimo n¿mero de d¿as para la activaci¿n de una novedad';
+comment on column FCM.CTA_DISP_AC_BANCO
+  is 'Banco acuerdo pago';
+comment on column FCM.CTA_DISP_AC_TIPO_CTA
+  is 'Tipo cuenta acuerdo pago';
+comment on column FCM.CTA_DISP_AC_CTA
+  is 'Cuenta acuerdo pago';
+comment on column FCM.SEGURIDAD_INTEGRADA
+  is '1: INTEGRADA 0: NO INTEGRADA';
+comment on column FCM.URL_SEGURIDAD
+  is 'Url del wsdl que soporta la seguridad integrada';
+comment on column FCM.SERVIDORSMTP
+  is 'ip del servidor smtp';
+alter table FCM
+  add constraint PK_NIT_FCM primary key (NIT_FCM);
+alter table FCM
+  add constraint CH_TIPOCTA_P_FCM
+  check (CTA_DISP_P_TIPO_CTA IN ('AHO','CTE'));
+alter table FCM
+  add constraint CH_TIPOCTA_S_FCM
+  check (CTA_DISP_S_TIPO_CTA IN ('AHO','CTE'));
+

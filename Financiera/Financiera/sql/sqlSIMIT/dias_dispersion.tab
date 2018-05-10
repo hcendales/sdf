@@ -1,0 +1,43 @@
+create table DIAS_DISPERSION
+(
+  IDMUNICIPIO        CHAR(8) not null,
+  IDBANCO            CHAR(2) not null,
+  DIAS_DISPERSION_SL NUMBER,
+  FREC_DISPERSION_SL NUMBER,
+  DIAS_DISPERSION_PL NUMBER,
+  FREC_DISPERSION_PL NUMBER,
+  DIAS_DISPERSION_SE NUMBER,
+  FREC_DISPERSION_SE NUMBER,
+  DIAS_DISPERSION_PE NUMBER,
+  FREC_DISPERSION_PE NUMBER
+)
+;
+comment on column DIAS_DISPERSION.IDMUNICIPIO
+  is 'Divipo del municipio';
+comment on column DIAS_DISPERSION.IDBANCO
+  is 'Id banco';
+comment on column DIAS_DISPERSION.DIAS_DISPERSION_SL
+  is 'Dias dispersion simit local';
+comment on column DIAS_DISPERSION.FREC_DISPERSION_SL
+  is 'Frecuencia dispersion simit local';
+comment on column DIAS_DISPERSION.DIAS_DISPERSION_PL
+  is 'Dias dispersion polca local';
+comment on column DIAS_DISPERSION.FREC_DISPERSION_PL
+  is 'Frecuencia dispersion polca local';
+comment on column DIAS_DISPERSION.DIAS_DISPERSION_SE
+  is 'Dias dispersion simit externo';
+comment on column DIAS_DISPERSION.FREC_DISPERSION_SE
+  is 'Frecuencia dispersion simit externo';
+comment on column DIAS_DISPERSION.DIAS_DISPERSION_PE
+  is 'Dias dispersion polca externo';
+comment on column DIAS_DISPERSION.FREC_DISPERSION_PE
+  is 'Frecuencia dispersion polca externo';
+alter table DIAS_DISPERSION
+  add constraint PK_DIAS_DISPERSION_MUNI_BANCO primary key (IDMUNICIPIO, IDBANCO);
+alter table DIAS_DISPERSION
+  add constraint FK_IDBANCO_DD foreign key (IDBANCO)
+  references BANCO (IDBANCO);
+alter table DIAS_DISPERSION
+  add constraint FK_IDMUNICIPIO_DD foreign key (IDMUNICIPIO)
+  references MUNICIPIO (IDMUNICIPIO);
+

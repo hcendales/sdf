@@ -1,0 +1,127 @@
+create table NOVMUNICIPIO
+(
+  IDMUNICIPIO              CHAR(8) not null,
+  NIT_M                    VARCHAR2(10),
+  NOMBRE                   VARCHAR2(50),
+  IDDEPARTAMENTO           CHAR(2),
+  IDCONCESIONARIO          CHAR(2),
+  CORREO                   VARCHAR2(500),
+  INDRETROACTIVIDAD        NUMBER,
+  IDBANCO                  CHAR(2),
+  TIPOCUENTA               VARCHAR2(3),
+  CUENTA                   VARCHAR2(250),
+  NIT_CTA                  VARCHAR2(10),
+  INDLIQ_S_EXT             NUMBER,
+  INDLIQ_S_LOCAL           NUMBER,
+  INDLIQ_P_EXT             NUMBER,
+  INDLIQ_P_LOCAL           NUMBER,
+  INDACUERDOPAGO_2002      NUMBER,
+  TIPONOV                  CHAR(2) not null,
+  NUMERONOV                NUMBER not null,
+  FECHANOV                 DATE not null,
+  USUARIONOV               NUMBER not null,
+  USUARIOVAL               NUMBER,
+  FECHAVAL                 DATE,
+  FECHAACT                 DATE not null,
+  ESTADONOV                VARCHAR2(16) not null,
+  FIRMA1                   VARCHAR2(250) not null,
+  FIRMA2                   VARCHAR2(250) not null,
+  MUNICIPIO_S              NUMBER not null,
+  FCM_CONTRAVENCIONAL_S    NUMBER not null,
+  CONCES_CONTRAVENCIONAL_S NUMBER not null,
+  ACUERDOPAGO_S            NUMBER not null,
+  MUNICIPIO_P              NUMBER not null,
+  FCM_CONTRAVENCIONAL_P    NUMBER not null,
+  CONCES_CONTRAVENCIONAL_P NUMBER not null,
+  ACUERDOPAGO_P            NUMBER not null,
+  USUARIOANUL              NUMBER,
+  FECHAANUL                DATE,
+  DNSAVVILLAS              VARCHAR2(16),
+  DNSGRANBANCO             VARCHAR2(16),
+  FECHAAPLICACION          DATE
+)
+;
+comment on column NOVMUNICIPIO.IDMUNICIPIO
+  is 'Divipo del NOVMUNICIPIO';
+comment on column NOVMUNICIPIO.NIT_M
+  is 'it del NOVMUNICIPIO';
+comment on column NOVMUNICIPIO.NOMBRE
+  is 'Nombre del NOVMUNICIPIO';
+comment on column NOVMUNICIPIO.IDDEPARTAMENTO
+  is 'Id del departamento';
+comment on column NOVMUNICIPIO.IDCONCESIONARIO
+  is 'Id del concesionario asignado al NOVMUNICIPIO';
+comment on column NOVMUNICIPIO.CORREO
+  is 'Correo de contacto del NOVMUNICIPIO';
+comment on column NOVMUNICIPIO.INDRETROACTIVIDAD
+  is 'Indicador de retroactividad de salario minimo';
+comment on column NOVMUNICIPIO.IDBANCO
+  is 'Id del banco para transferencias';
+comment on column NOVMUNICIPIO.TIPOCUENTA
+  is 'Tipo de cuenta para transferecias (AHO, CTE)';
+comment on column NOVMUNICIPIO.CUENTA
+  is 'Numero de cuenta para transferencias';
+comment on column NOVMUNICIPIO.NIT_CTA
+  is 'Nit de la cuenta para ransferencias';
+comment on column NOVMUNICIPIO.INDLIQ_S_EXT
+  is 'Indicador de liquidacion simit externo';
+comment on column NOVMUNICIPIO.INDLIQ_S_LOCAL
+  is 'Indicador de liquidacion simit local';
+comment on column NOVMUNICIPIO.INDLIQ_P_EXT
+  is 'Indicador de liquidacion polca externo';
+comment on column NOVMUNICIPIO.INDLIQ_P_LOCAL
+  is 'Indicador de liquidacion polca local';
+comment on column NOVMUNICIPIO.INDACUERDOPAGO_2002
+  is 'Indicador de Acuerdo Pago 2002';
+comment on column NOVMUNICIPIO.TIPONOV
+  is 'Tipo de Novedad 01-Adicionar Municipio, 02:Actualizar Municipio';
+comment on column NOVMUNICIPIO.NUMERONOV
+  is 'Numero de novedad';
+comment on column NOVMUNICIPIO.FECHANOV
+  is 'Fecha de novedad';
+comment on column NOVMUNICIPIO.USUARIONOV
+  is 'Usuario que reporta novedad';
+comment on column NOVMUNICIPIO.USUARIOVAL
+  is 'Usuario que valida novedad';
+comment on column NOVMUNICIPIO.FECHAVAL
+  is 'Fecha validacion novedad';
+comment on column NOVMUNICIPIO.FECHAACT
+  is 'FechaActivacionNovedad';
+comment on column NOVMUNICIPIO.ESTADONOV
+  is 'Estado Novedad: INGRESADA, VALIDADA, ACTIVA';
+comment on column NOVMUNICIPIO.FIRMA1
+  is 'Nombre de la primera firma';
+comment on column NOVMUNICIPIO.FIRMA2
+  is 'Nombre de la segunda firma';
+comment on column NOVMUNICIPIO.MUNICIPIO_S
+  is 'Porcentaje simit 90%';
+comment on column NOVMUNICIPIO.FCM_CONTRAVENCIONAL_S
+  is 'Porcentaje fcm contravencional  simit 90%';
+comment on column NOVMUNICIPIO.CONCES_CONTRAVENCIONAL_S
+  is 'Porcentaje concesionario contravencional  simit 90%';
+comment on column NOVMUNICIPIO.ACUERDOPAGO_S
+  is 'Porcentaje acuerdo  simit 90%';
+comment on column NOVMUNICIPIO.MUNICIPIO_P
+  is 'Porcentaje municipio polca 45%';
+comment on column NOVMUNICIPIO.FCM_CONTRAVENCIONAL_P
+  is 'Porcentaje fcm contravencional  polca 90%';
+comment on column NOVMUNICIPIO.CONCES_CONTRAVENCIONAL_P
+  is 'Porcentaje concesionario contravencional  polca 90%';
+comment on column NOVMUNICIPIO.ACUERDOPAGO_P
+  is 'Porcentaje acuerdo polca 90%';
+comment on column NOVMUNICIPIO.USUARIOANUL
+  is 'Usuario que anula la novedad';
+comment on column NOVMUNICIPIO.FECHAANUL
+  is 'Fecha anulacion novedad';
+alter table NOVMUNICIPIO
+  add constraint PK_IDNOVMUNICIPIO primary key (IDMUNICIPIO, TIPONOV, NUMERONOV);
+alter table NOVMUNICIPIO
+  add constraint FK_IDCONCESIONARIO_NOVM foreign key (IDCONCESIONARIO)
+  references CONCESIONARIO (IDCONCESIONARIO);
+alter table NOVMUNICIPIO
+  add constraint FK_IDDEPARTAMENTO_NOVM foreign key (IDDEPARTAMENTO)
+  references DEPARTAMENTO (IDDEPARTAMENTO);
+alter table NOVMUNICIPIO
+  add constraint CH_TIPOCUENTA_NOVM
+  check (tipocuenta IN ('AHO','CTE'));
+

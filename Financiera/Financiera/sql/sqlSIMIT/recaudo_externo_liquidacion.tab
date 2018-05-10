@@ -1,0 +1,343 @@
+create table RECAUDO_EXTERNO_LIQUIDACION
+(
+  ID_RECAUDO_EXTERNO_LIQUIDACION NUMBER not null,
+  ID_RECAUDO_EXTERNO             NUMBER,
+  ID_CONCESIONARIO_PRO           CHAR(2),
+  ID_CONCESIONARIO_LIQ           CHAR(2),
+  INDTIPO                        CHAR(5),
+  USUARIO_PROCESO                VARCHAR2(20),
+  FECHA_PROCESO                  DATE,
+  IDMUNICIPIO                    CHAR(8),
+  FEC_CORTE                      DATE,
+  IND_PROCESO                    NUMBER,
+  NUM_LIQUIDACION                VARCHAR2(15),
+  DIAS_DISPERSION                NUMBER,
+  FREC_DISPERSION                NUMBER,
+  FEC_DISPERSION                 DATE,
+  IDBANCO                        CHAR(2),
+  SMDLV                          NUMBER,
+  INDRETROACTIVIDAD              NUMBER,
+  VALOR_TOTAL                    NUMBER,
+  VALOR_ADICIONAL                NUMBER,
+  VALIDADOR_FECHA                CHAR(3),
+  INDFECHA2002                   CHAR(1),
+  S_VALOR_0                      NUMBER default 0,
+  S_VALOR_1                      NUMBER default 0,
+  S_VALOR_2                      NUMBER default 0,
+  S_VALOR_3                      NUMBER default 0,
+  S_VALOR_4                      NUMBER default 0,
+  S_VALOR_5                      NUMBER default 0,
+  S_VALOR_6                      NUMBER default 0,
+  S_VALOR_7                      NUMBER default 0,
+  S_VALOR_8                      NUMBER default 0,
+  S_VALOR_9                      NUMBER default 0,
+  S_VALOR_10                     NUMBER default 0,
+  S_VALOR_11                     NUMBER default 0,
+  S_VALOR_12                     NUMBER default 0,
+  S_VALOR_13                     NUMBER default 0,
+  S_VALOR_14                     NUMBER default 0,
+  S_VALOR_15                     NUMBER default 0,
+  S_VALOR_16                     NUMBER default 0,
+  S_VALOR_17                     NUMBER default 0,
+  S_VALOR_18                     NUMBER default 0,
+  S_VALOR_19                     NUMBER default 0,
+  S_VALOR_20                     NUMBER default 0,
+  S_VALOR_21                     NUMBER default 0,
+  S_VALOR_22                     NUMBER default 0,
+  S_VALOR_23                     NUMBER default 0,
+  S_VALOR_24                     NUMBER default 0,
+  S_VALOR_25                     NUMBER default 0,
+  S_VALOR_26                     NUMBER default 0,
+  S_VALOR_27                     NUMBER default 0,
+  S_VALOR_28                     NUMBER default 0,
+  CTA_RECAUDO                    VARCHAR2(16),
+  IND_BASE_TER1                  NUMBER,
+  IND_BASE_TER2                  NUMBER,
+  IND_BASE_TER3                  NUMBER,
+  IND_BASE_TER4                  NUMBER,
+  POR_BASE_TER1                  NUMBER,
+  POR_BASE_TER2                  NUMBER,
+  POR_BASE_TER3                  NUMBER,
+  POR_BASE_TER4                  NUMBER,
+  S_VALOR_29                     NUMBER,
+  NOM_TER1                       VARCHAR2(50),
+  NOM_TER2                       VARCHAR2(50),
+  NOM_TER3                       VARCHAR2(50),
+  NOM_TER4                       VARCHAR2(50),
+  P_VALOR_1                      NUMBER default 0,
+  P_VALOR_2                      NUMBER default 0,
+  P_VALOR_3                      NUMBER default 0,
+  P_VALOR_4                      NUMBER default 0,
+  P_VALOR_5                      NUMBER default 0,
+  P_VALOR_6                      NUMBER default 0,
+  P_VALOR_7                      NUMBER default 0,
+  P_VALOR_8                      NUMBER default 0,
+  P_VALOR_9                      NUMBER default 0,
+  P_VALOR_10                     NUMBER default 0,
+  P_VALOR_11                     NUMBER default 0,
+  P_VALOR_12                     NUMBER default 0,
+  P_VALOR_13                     NUMBER default 0,
+  P_VALOR_14                     NUMBER default 0,
+  P_VALOR_15                     NUMBER default 0,
+  P_VALOR_16                     NUMBER default 0,
+  P_VALOR_17                     NUMBER default 0,
+  P_VALOR_18                     NUMBER default 0,
+  P_VALOR_19                     NUMBER default 0,
+  P_VALOR_20                     NUMBER default 0,
+  P_VALOR_21                     NUMBER default 0,
+  P_VALOR_22                     NUMBER default 0,
+  P_VALOR_23                     NUMBER default 0,
+  P_VALOR_24                     NUMBER default 0,
+  P_VALOR_25                     NUMBER default 0,
+  P_VALOR_26                     NUMBER default 0,
+  P_VALOR_27                     NUMBER default 0,
+  P_VALOR_28                     NUMBER default 0,
+  P_VALOR_29                     NUMBER default 0,
+  P_VALOR_30                     NUMBER default 0,
+  P_VALOR_31                     NUMBER default 0,
+  P_VALOR_32                     NUMBER default 0,
+  P_VALOR_33                     NUMBER default 0,
+  P_VALOR_34                     NUMBER default 0,
+  P_VALOR_35                     NUMBER default 0,
+  P_VALOR_36                     NUMBER default 0,
+  P_VALOR_37                     NUMBER default 0,
+  P_VALOR_38                     NUMBER default 0,
+  P_VALOR_39                     NUMBER default 0,
+  P_VALOR_40                     NUMBER default 0,
+  P_VALOR_41                     NUMBER default 0,
+  P_VALOR_42                     NUMBER default 0,
+  P_VALOR_43                     NUMBER default 0,
+  S_VALOR_30                     NUMBER default 0,
+  P_VALOR_44                     NUMBER default 0,
+  FEC_DISPERSION_CON             DATE,
+  NIT_MUNICIPIO                  VARCHAR2(10),
+  NIT_TERCERO1                   VARCHAR2(10),
+  NIT_TERCERO2                   VARCHAR2(10),
+  NIT_TERCERO3                   VARCHAR2(10),
+  NIT_TERCERO4                   VARCHAR2(10),
+  NIT_CONCESIONARIO              VARCHAR2(10),
+  NIT_FONDO                      VARCHAR2(10),
+  NIT_CONCESIONARIOZON           VARCHAR2(10)
+)
+;
+comment on column RECAUDO_EXTERNO_LIQUIDACION.ID_RECAUDO_EXTERNO_LIQUIDACION
+  is 'identificador unico';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.ID_RECAUDO_EXTERNO
+  is 'id recuado externo';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.ID_CONCESIONARIO_PRO
+  is 'concesionario propietario';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.ID_CONCESIONARIO_LIQ
+  is 'concesionario liquidador';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.INDTIPO
+  is 'tipo de comparendo (SIMIT, POLCA)';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.USUARIO_PROCESO
+  is 'usuario proceso';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.FECHA_PROCESO
+  is 'fecha de proceso';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.IDMUNICIPIO
+  is 'municipio';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.FEC_CORTE
+  is 'fecha de corte';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.IND_PROCESO
+  is 'indicador proceso';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.NUM_LIQUIDACION
+  is 'numero de liquidacion';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.DIAS_DISPERSION
+  is 'dias de dispersion';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.FREC_DISPERSION
+  is 'frecuencia de dispersion';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.FEC_DISPERSION
+  is 'fecha de dispersion';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.IDBANCO
+  is 'banco recaudo';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.SMDLV
+  is 'salario minimo diario';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.INDRETROACTIVIDAD
+  is 'indicador de retroactividad';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.VALOR_TOTAL
+  is 'valor total del recaudo';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.VALOR_ADICIONAL
+  is 'valor adicional del recaudo';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.VALIDADOR_FECHA
+  is 'validador fecha';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.INDFECHA2002
+  is 'indicador de fecha < nov-2002';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_0
+  is 'comison recaudo';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_1
+  is 'valor base';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_2
+  is 'valor simit base';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_3
+  is 'valor simit';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_4
+  is 'valor concesionario liquidador';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_5
+  is 'valor fondo cobertura concesonario';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_6
+  is 'valor fondo cobertura simit';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_7
+  is 'equilibrio economico';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_8
+  is 'valor base organsmo transito';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_9
+  is 'valor base contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_10
+  is 'valor acuerdo de pago';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_11
+  is 'valor operador contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_12
+  is 'valor fcm contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_13
+  is 'valor base municipio';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_14
+  is 'iva contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_15
+  is 'impuesto timbre contravencioanl';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_16
+  is 'retencion en la fuente contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_17
+  is 'reteiva contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_18
+  is 'valor base tercero 1';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_19
+  is 'valor tercero 1';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_20
+  is 'valor base tercero 2';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_21
+  is 'valor tercero 2';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_22
+  is 'valor base tercero 3';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_23
+  is 'valor tercero 3';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_24
+  is 'valor base tercero 4';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_25
+  is 'valor tercero 4';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_26
+  is 'valor neto municipio';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_27
+  is 'valor neto concesionario propietario';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_28
+  is 'valor neto concesioanrio liquidador';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.CTA_RECAUDO
+  is 'cuenta de recaudo';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.IND_BASE_TER1
+  is 'indicador base tercero 1';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.IND_BASE_TER2
+  is 'indicador base tercero 2';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.IND_BASE_TER3
+  is 'indicador base tercero 3';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.IND_BASE_TER4
+  is 'indicador base tercero 4';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.POR_BASE_TER1
+  is 'porcentaje base tercero 1';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.POR_BASE_TER2
+  is 'porcentaje base tercero 2';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.POR_BASE_TER3
+  is 'porcentaje base tercero 3';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.POR_BASE_TER4
+  is 'porcentaje base tercero 4';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_29
+  is 'valor neto fcm';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.NOM_TER1
+  is 'nombre tercero 1';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.NOM_TER2
+  is 'nombre tercero 2';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.NOM_TER3
+  is 'nombre tercero 3';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.NOM_TER4
+  is 'nombre tercero 4';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_1
+  is 'valor base';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_2
+  is 'valor simit base';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_3
+  is 'valor simit pm';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_4
+  is 'valor concesionario liquidador';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_5
+  is 'valor fondo cobertura concesionario';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_6
+  is 'valor fondo cobertura simit';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_7
+  is 'equilibrio economico pm';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_8
+  is 'valor simit pp';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_9
+  is 'valor sevial pp';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_10
+  is 'equilibrio economico pp';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_11
+  is 'valor base polca';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_12
+  is 'valor polca';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_13
+  is 'valor fcm cp';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_14
+  is 'valor sevial cp';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_15
+  is 'equilibrio economico cp';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_16
+  is 'iva fcm';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_17
+  is 'timbre fcm';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_18
+  is 'iva sevial';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_19
+  is 'retencion sevial';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_20
+  is 'timbre sevial';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_21
+  is 'valor base ot';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_22
+  is 'valor base contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_23
+  is 'valor acuerdo pago';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_24
+  is 'valor operador contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_25
+  is 'valor fcm contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_26
+  is 'valor base municipio';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_27
+  is 'iva contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_28
+  is 'impuesto timbre contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_29
+  is 'retencion contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_30
+  is 'reteiva contravencional';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_31
+  is 'valor base tercero 1';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_32
+  is 'valor tercero 1';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_33
+  is 'valor base tercero 2';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_34
+  is 'valor tercero 2';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_35
+  is 'valor base tercero 3';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_36
+  is 'valor tercero 3';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_37
+  is 'valor base tercero 4';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_38
+  is 'valor tercero 4';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_39
+  is 'valor neto municipio';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_40
+  is 'valor neto concesionario propietario';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_41
+  is 'valor neto concesionario liquidador';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_42
+  is 'valor neto fcm';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_43
+  is 'valor neto sevial';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.S_VALOR_30
+  is 'valor Timbre Contravenvencional Concesionario';
+comment on column RECAUDO_EXTERNO_LIQUIDACION.P_VALOR_44
+  is 'Valor timbre contravencional concesionario';
+alter table RECAUDO_EXTERNO_LIQUIDACION
+  add constraint PK_RECAUDO_EXTERNO_LIQUIDACION primary key (ID_RECAUDO_EXTERNO_LIQUIDACION);
+

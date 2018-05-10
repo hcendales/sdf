@@ -1,0 +1,49 @@
+create table TERCERO
+(
+  IDMUNICIPIO   CHAR(8) not null,
+  NIT_T         CHAR(10) not null,
+  NOMBRE        VARCHAR2(50),
+  IDBANCO       CHAR(2),
+  TIPOCUENTA    VARCHAR2(3),
+  CUENTA        VARCHAR2(250),
+  BASE_S        NUMBER,
+  BASE_P        NUMBER,
+  IND_BASE      NUMBER,
+  NUM_TERCERO   NUMBER not null,
+  CORREOTERCERO VARCHAR2(50)
+)
+;
+comment on column TERCERO.IDMUNICIPIO
+  is 'municipio';
+comment on column TERCERO.NIT_T
+  is 'nir del tercero';
+comment on column TERCERO.NOMBRE
+  is 'nombre del tercero';
+comment on column TERCERO.IDBANCO
+  is 'banco ';
+comment on column TERCERO.TIPOCUENTA
+  is 'tipo de cuenta (AHO; CTE)';
+comment on column TERCERO.CUENTA
+  is 'cuenta ';
+comment on column TERCERO.BASE_S
+  is 'porcentaje base simit';
+comment on column TERCERO.BASE_P
+  is 'porcentaje base polca';
+comment on column TERCERO.IND_BASE
+  is 'indicador de base';
+comment on column TERCERO.NUM_TERCERO
+  is 'numero de tercero';
+comment on column TERCERO.CORREOTERCERO
+  is 'correo tercero';
+alter table TERCERO
+  add constraint PK_TERCERO primary key (IDMUNICIPIO, NUM_TERCERO);
+alter table TERCERO
+  add constraint FK_IDBANCO_T foreign key (IDBANCO)
+  references BANCO (IDBANCO);
+alter table TERCERO
+  add constraint FK_IDMUNICIPIO_T foreign key (IDMUNICIPIO)
+  references MUNICIPIO (IDMUNICIPIO);
+alter table TERCERO
+  add constraint CH_TIPOCUENTA_T
+  check (tipocuenta IN ('AHO','CTE'));
+

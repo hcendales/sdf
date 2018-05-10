@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="csvTfrExternoPolca"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="1008"
+		 pageHeight="612"
+		 columnWidth="948"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="P_FEC_INI" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="P_FEC_FIN" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[SELECT
+     VW_LIQSIMITEXTERNO."CuentaRecaudo" AS VW_LIQSIMITEXTERNO_CuentaRecau,
+     VW_LIQSIMITEXTERNO."FechaRecaudo" AS VW_LIQSIMITEXTERNO_FechaRecaud,
+     VW_LIQSIMITEXTERNO."FechaProceso" AS VW_LIQSIMITEXTERNO_FechaProces,
+     VW_LIQSIMITEXTERNO."FechaDispersion" AS VW_LIQSIMITEXTERNO_FechaDisper,
+     VW_LIQSIMITEXTERNO."Oficina" AS VW_LIQSIMITEXTERNO_Oficina,
+     VW_LIQSIMITEXTERNO."NumeroLiquidacion" AS VW_LIQSIMITEXTERNO_NumeroLiqui,
+     VW_LIQSIMITEXTERNO."Identificacion" AS VW_LIQSIMITEXTERNO_Identificac,
+     VW_LIQSIMITEXTERNO."Divipo" AS VW_LIQSIMITEXTERNO_Divipo,
+     VW_LIQSIMITEXTERNO."TipoRecaudo" AS VW_LIQSIMITEXTERNO_TipoRecaudo,
+     VW_LIQSIMITEXTERNO."IdConcesionarioLiquidador" AS VW_LIQSIMITEXTERNO_IdConcesion,
+     VW_LIQSIMITEXTERNO."IdConcesionarioZon" AS VW_LIQSIMITEXTERNO_IdConZonal,
+     VW_LIQSIMITEXTERNO."Validador" AS VW_LIQSIMITEXTERNO_Validador,
+     VW_LIQSIMITEXTERNO."Fecha2002" AS VW_LIQSIMITEXTERNO_Fecha2002,
+     VW_LIQSIMITEXTERNO."VRecaudo" AS VW_LIQSIMITEXTERNO_VRecaudo,
+     VW_LIQSIMITEXTERNO."VAdicional" AS VW_LIQSIMITEXTERNO_VAdicional,
+     VW_LIQSIMITEXTERNO."VBase" AS VW_LIQSIMITEXTERNO_VBase,
+     VW_LIQSIMITEXTERNO."VSimitBase" AS VW_LIQSIMITEXTERNO_VSimitBase,
+     VW_LIQSIMITEXTERNO."VCLiquidador" AS VW_LIQSIMITEXTERNO_VCLiquidado,
+     VW_LIQSIMITEXTERNO."VSimit" AS VW_LIQSIMITEXTERNO_VSimit,
+     VW_LIQSIMITEXTERNO."VFCSimt" AS VW_LIQSIMITEXTERNO_VFCSimt,
+     VW_LIQSIMITEXTERNO."VFCConcesionario" AS VW_LIQSIMITEXTERNO_VFCConcesio,
+     VW_LIQSIMITEXTERNO."VEquilibrio" AS VW_LIQSIMITEXTERNO_VEquilibrio,
+     VW_LIQSIMITEXTERNO."EE18" AS VW_LIQSIMITEXTERNO_EE18,
+     VW_LIQSIMITEXTERNO."EE2" AS VW_LIQSIMITEXTERNO_EE2,
+     VW_LIQSIMITEXTERNO."VSevial3" AS VW_LIQSIMITEXTERNO_VSevial3,
+     VW_LIQSIMITEXTERNO."VSevial27" AS VW_LIQSIMITEXTERNO_VSevial27,
+     VW_LIQSIMITEXTERNO."VIva27" AS VW_LIQSIMITEXTERNO_VIva27,
+     VW_LIQSIMITEXTERNO."VFCM18" AS VW_LIQSIMITEXTERNO_VFCM18,
+     VW_LIQSIMITEXTERNO."VIva18" AS VW_LIQSIMITEXTERNO_VIva18,
+     VW_LIQSIMITEXTERNO."VPolca" AS VW_LIQSIMITEXTERNO_VPolca,
+     VW_LIQSIMITEXTERNO."VTimbre27" AS VW_LIQSIMITEXTERNO_VTimbre27,
+     VW_LIQSIMITEXTERNO."VTimbre27_18" AS VW_LIQSIMITEXTERNO_VTimbre27_1,
+     VW_LIQSIMITEXTERNO."VRetencion27" AS VW_LIQSIMITEXTERNO_VRetencion2,
+     VW_LIQSIMITEXTERNO."VOperadorCon" AS VW_LIQSIMITEXTERNO_VOperadorCo,
+     VW_LIQSIMITEXTERNO."VFCMCon" AS VW_LIQSIMITEXTERNO_VFCMCon,
+     VW_LIQSIMITEXTERNO."VTercero1" AS VW_LIQSIMITEXTERNO_VTercero1,
+     VW_LIQSIMITEXTERNO."VTercero2" AS VW_LIQSIMITEXTERNO_VTercero2,
+     VW_LIQSIMITEXTERNO."VTercero3" AS VW_LIQSIMITEXTERNO_VTercero3,
+     VW_LIQSIMITEXTERNO."VMunicipio" AS VW_LIQSIMITEXTERNO_VMunicipio,
+     VW_LIQSIMITEXTERNO."VAcuerdo" AS VW_LIQSIMITEXTERNO_VAcuerdo,
+     VW_LIQSIMITEXTERNO."VIVACon" AS VW_LIQSIMITEXTERNO_VIVACon,
+     VW_LIQSIMITEXTERNO."VTimbreCon" AS VW_LIQSIMITEXTERNO_VTimbreCon,
+     VW_LIQSIMITEXTERNO."VRetencionContConc" AS VW_LIQSIMITEXTERNO_VRetencionC,
+     VW_LIQSIMITEXTERNO."VTimbreContConc" AS VW_LIQSIMITEXTERNO_VTimbreCont,
+     VW_LIQSIMITEXTERNO."BancoRec" AS VW_LIQSIMITEXTERNO_BancoRec,
+     VW_LIQSIMITEXTERNO."Municipio" AS VW_LIQSIMITEXTERNO_Municpio,
+     VW_LIQSIMITEXTERNO."Departamento" AS VW_LIQSIMITEXTERNO_Dpto,
+     VW_LIQSIMITEXTERNO."Comparendo" AS VW_LIQSIMITEXTERNO_Comparendo,
+     VW_LIQSIMITEXTERNO."FechaComp" AS VW_LIQSIMITEXTERNO_FechaComp,
+     VW_LIQSIMITEXTERNO."FecDispCon" AS VW_LIQSIMITEXTERNO_FecDispCon
+
+
+FROM
+     "VW_LIQSIMITEXTERNO" VW_LIQSIMITEXTERNO
+WHERE
+   TO_CHAR("FecDispCon",'YYYY/MM/DD') >= $P{P_FEC_INI}
+  AND TO_CHAR("FecDispCon",'YYYY/MM/DD') <= $P{P_FEC_FIN}
+  AND "TipoRecaudo" = 'POLCA'  
+order by  VW_LIQSIMITEXTERNO."NumeroLiquidacion"]]></queryString>
+
+	<field name="VW_LIQSIMITEXTERNO_CUENTARECAU" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_FECHARECAUD" class="java.sql.Timestamp"/>
+	<field name="VW_LIQSIMITEXTERNO_FECHAPROCES" class="java.sql.Timestamp"/>
+	<field name="VW_LIQSIMITEXTERNO_FECHADISPER" class="java.sql.Timestamp"/>
+	<field name="VW_LIQSIMITEXTERNO_OFICINA" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_NUMEROLIQUI" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_IDENTIFICAC" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_DIVIPO" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_TIPORECAUDO" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_IDCONCESION" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_IDCONZONAL" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_VALIDADOR" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_FECHA2002" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_VRECAUDO" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VADICIONAL" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VBASE" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VSIMITBASE" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VCLIQUIDADO" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VSIMIT" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VFCSIMT" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VFCCONCESIO" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VEQUILIBRIO" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_EE18" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_EE2" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VSEVIAL3" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VSEVIAL27" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VIVA27" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VFCM18" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VIVA18" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VPOLCA" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VTIMBRE27" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VTIMBRE27_1" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VRETENCION2" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VOPERADORCO" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VFCMCON" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VTERCERO1" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VTERCERO2" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VTERCERO3" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VMUNICIPIO" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VACUERDO" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VIVACON" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VTIMBRECON" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VRETENCIONC" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_VTIMBRECONT" class="java.math.BigDecimal"/>
+	<field name="VW_LIQSIMITEXTERNO_BANCOREC" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_MUNICPIO" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_DPTO" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_COMPARENDO" class="java.lang.String"/>
+	<field name="VW_LIQSIMITEXTERNO_FECHACOMP" class="java.sql.Timestamp"/>
+	<field name="VW_LIQSIMITEXTERNO_FECDISPCON" class="java.sql.Timestamp"/>
+
+	<variable name="numRec" class="java.lang.Integer" resetType="Report" calculation="Count">
+		<variableExpression><![CDATA[$F{VW_LIQSIMITEXTERNO_NUMEROLIQUI}]]></variableExpression>
+	</variable>
+	<variable name="totAdi" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VW_LIQSIMITEXTERNO_VADICIONAL}]]></variableExpression>
+	</variable>
+	<variable name="sumRec" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VW_LIQSIMITEXTERNO_VRECAUDO}]]></variableExpression>
+	</variable>
+	<variable name="sumBase" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VW_LIQSIMITEXTERNO_VBASE}]]></variableExpression>
+	</variable>
+	<variable name="sumPolca" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VW_LIQSIMITEXTERNO_VPOLCA}]]></variableExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="17"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Cuenta]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="50"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FechaRec]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="100"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FechaProc]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="150"
+						y="0"
+						width="54"
+						height="17"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NumeroLiq]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="204"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Identif]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="254"
+						y="0"
+						width="34"
+						height="17"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Divipo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="288"
+						y="0"
+						width="56"
+						height="17"
+						key="staticText-14"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VRecaudo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="344"
+						y="0"
+						width="58"
+						height="17"
+						key="staticText-15"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VAdicional]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="402"
+						y="0"
+						width="57"
+						height="17"
+						key="staticText-16"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VBase]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="459"
+						y="0"
+						width="58"
+						height="17"
+						key="staticText-30"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VPolca]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="517"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-45"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Municipio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="567"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-46"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Dpto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="617"
+						y="0"
+						width="66"
+						height="17"
+						key="staticText-47"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Comparendo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="683"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-48"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FechaCom]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="733"
+						y="0"
+						width="50"
+						height="17"
+						key="staticText-49"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FechaTrf]]></text>
+				</staticText>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="13"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="50"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["'" + $F{VW_LIQSIMITEXTERNO_CUENTARECAU}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="yyyy/MM/dd" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="50"
+						y="0"
+						width="50"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{VW_LIQSIMITEXTERNO_FECHARECAUD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="yyyy/MM/dd" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="100"
+						y="0"
+						width="50"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{VW_LIQSIMITEXTERNO_FECHAPROCES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="150"
+						y="0"
+						width="55"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{VW_LIQSIMITEXTERNO_NUMEROLIQUI}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="205"
+						y="0"
+						width="50"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{VW_LIQSIMITEXTERNO_IDENTIFICAC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="255"
+						y="0"
+						width="33"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["'" + $F{VW_LIQSIMITEXTERNO_DIVIPO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="715"
+						y="0"
+						width="57"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VW_LIQSIMITEXTERNO_VRECAUDO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="772"
+						y="0"
+						width="58"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VW_LIQSIMITEXTERNO_VADICIONAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="288"
+						y="0"
+						width="56"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VW_LIQSIMITEXTERNO_VBASE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="344"
+						y="0"
+						width="57"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VW_LIQSIMITEXTERNO_VPOLCA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="401"
+						y="0"
+						width="71"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{VW_LIQSIMITEXTERNO_MUNICPIO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="472"
+						y="0"
+						width="76"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{VW_LIQSIMITEXTERNO_DPTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="548"
+						y="0"
+						width="67"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{VW_LIQSIMITEXTERNO_COMPARENDO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="yyyy/MM/dd" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="615"
+						y="0"
+						width="50"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{VW_LIQSIMITEXTERNO_FECHACOMP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="yyyy/MM/dd" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="665"
+						y="0"
+						width="50"
+						height="13"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.sql.Timestamp"><![CDATA[$F{VW_LIQSIMITEXTERNO_FECDISPCON}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

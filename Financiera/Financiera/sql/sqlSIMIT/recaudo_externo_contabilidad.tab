@@ -1,0 +1,83 @@
+create table RECAUDO_EXTERNO_CONTABILIDAD
+(
+  FECHADOC            CHAR(8),
+  CLASEDOC            CHAR(2),
+  SOCIEDAD            CHAR(4),
+  FECHACONTABLE       CHAR(8),
+  PERIODO             CHAR(2),
+  MONEDA              CHAR(3),
+  REFERENCIA          CHAR(16),
+  TEXTOCABEZERA       CHAR(25),
+  CLAVECONTABLE       CHAR(2),
+  CUENTA              CHAR(17),
+  IMPORTE             NUMBER,
+  INDICADORIMPUESTO   CHAR(2),
+  CENTROCOSTO         CHAR(10),
+  CENTROBENEFICIO     CHAR(10),
+  FECHAVALOR          CHAR(8),
+  ASIGNACION          CHAR(18),
+  TEXTOCABEZERA2      CHAR(50),
+  SEGMENTO            CHAR(10),
+  NITTERCERO          CHAR(12),
+  CUENTADIVERGENTE    CHAR(10),
+  FECHABASE           CHAR(8),
+  CONDICIONPAGO       CHAR(4),
+  RECEPTORALTERNATIVO CHAR(10),
+  FECHAGENERACION     DATE,
+  IDPERSON            NUMBER,
+  TIPOCONTABLE        CHAR(3)
+)
+;
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.FECHADOC
+  is 'Fecha de cierre del recaudo ddMMyyyy';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.CLASEDOC
+  is 'Valor fijo ZT';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.SOCIEDAD
+  is 'Valor PFC1 (FCM1 si es 1.8 o 2.7 mas iva)';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.FECHACONTABLE
+  is 'Fecha de cierre del recaudo ddMMyyyy';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.PERIODO
+  is 'Mes de la fecha de cierre';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.MONEDA
+  is 'Valor fijo COP';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.REFERENCIA
+  is 'Numero de liquidacion (Para cuentas 11:Bancos, 24_29:CXP, 14:CXC)';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.TEXTOCABEZERA
+  is 'Concepto de partida';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.CLAVECONTABLE
+  is 'Valor que indica si la partida es debito o credito';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.CUENTA
+  is 'Cuenta contable';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.IMPORTE
+  is 'Valor de la partida';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.INDICADORIMPUESTO
+  is 'Valor fijo espacios';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.CENTROCOSTO
+  is 'Centro de costo (aplica para cuentas 5)';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.CENTROBENEFICIO
+  is 'Centro de beneficio (aplica para cuentas 4)';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.FECHAVALOR
+  is 'Fecha de cierre del recaudo ddMMyyyy';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.ASIGNACION
+  is 'Texto fijo: Recaudo ctaRecaudo';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.TEXTOCABEZERA2
+  is 'Concepto de partida';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.SEGMENTO
+  is 'Valor fijo: SIMIT';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.NITTERCERO
+  is 'Nit municipio, Concesionario';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.CUENTADIVERGENTE
+  is 'Cuenta Divergente';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.FECHABASE
+  is 'Fecha de dispersion cuentas 24_29:CXP';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.CONDICIONPAGO
+  is 'Valor fijo 0001';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.RECEPTORALTERNATIVO
+  is 'Nit de tercero';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.FECHAGENERACION
+  is 'Fecha de generacion del registro';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.IDPERSON
+  is 'Id funcionario de generacion del registro';
+comment on column RECAUDO_EXTERNO_CONTABILIDAD.TIPOCONTABLE
+  is 'Tipo de contabilidad REC:Recaudo, DIS:Dispersion';
+

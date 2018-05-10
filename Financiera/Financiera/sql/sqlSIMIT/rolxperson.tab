@@ -1,0 +1,11 @@
+create table ROLXPERSON
+(
+  ROLID    NUMBER,
+  PERSONID NUMBER
+)
+;
+comment on column ROLXPERSON.ROLID
+  is 'rol';
+comment on column ROLXPERSON.PERSONID
+  is 'funcionario';
+

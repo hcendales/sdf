@@ -1,0 +1,3 @@
+grant execute on utl_file to public;
+grant execute on utl_http to public;
+grant execute on utl_smtp to public; 

@@ -1,0 +1,41 @@
+create table RECAUDO_LOCAL
+(
+  IDBANCO        CHAR(2),
+  CTA_RECAUDO    VARCHAR2(16),
+  INDTIPO        VARCHAR2(5),
+  FEC_CORTE      DATE,
+  FEC_TRAN       DATE,
+  OFICINA_ORIGEN VARCHAR2(250),
+  VALOR_EFECTIVO NUMBER,
+  VALOR_CHEQUE   NUMBER,
+  VALOR_TOTAL    NUMBER,
+  NIT_M          VARCHAR2(10),
+  IDMUNICIPIO    CHAR(8),
+  P_CONSIGNADO   NUMBER
+)
+;
+comment on column RECAUDO_LOCAL.IDBANCO
+  is 'Banco recaudo';
+comment on column RECAUDO_LOCAL.CTA_RECAUDO
+  is 'cuenta de recaudo';
+comment on column RECAUDO_LOCAL.INDTIPO
+  is 'tipo de recaudo (SIMIT, POLCA)';
+comment on column RECAUDO_LOCAL.FEC_CORTE
+  is 'fecha de corte';
+comment on column RECAUDO_LOCAL.FEC_TRAN
+  is 'fecha de transaccion';
+comment on column RECAUDO_LOCAL.OFICINA_ORIGEN
+  is 'oficina origen';
+comment on column RECAUDO_LOCAL.VALOR_EFECTIVO
+  is 'valor efectivo';
+comment on column RECAUDO_LOCAL.VALOR_CHEQUE
+  is 'valor cheque';
+comment on column RECAUDO_LOCAL.VALOR_TOTAL
+  is 'valor total';
+comment on column RECAUDO_LOCAL.NIT_M
+  is 'nit municipio';
+comment on column RECAUDO_LOCAL.IDMUNICIPIO
+  is 'municipio recaudo';
+comment on column RECAUDO_LOCAL.P_CONSIGNADO
+  is 'porcentaje consignado';
+

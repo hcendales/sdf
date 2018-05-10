@@ -1,0 +1,62 @@
+create table RECAUDO_EXTERNO_CAUSACION
+(
+  OPERACION       VARCHAR2(10),
+  FEC_CORTE_INI   DATE,
+  FEC_CORTE_FIN   DATE,
+  ORI_IDBANCO     CHAR(2),
+  ORI_CUENTA      VARCHAR2(16),
+  IDCONCESIONARIO CHAR(2),
+  VALOR_DEBITO    NUMBER,
+  VALOR_CREDITO   NUMBER,
+  DEB_CTA_CON     VARCHAR2(16),
+  DEB_CEN_COS     VARCHAR2(16),
+  DEB_NIT_TER     VARCHAR2(16),
+  CRE_CTA_CON     VARCHAR2(16),
+  CRE_CEN_COS     VARCHAR2(16),
+  CRE_NIT_TER     VARCHAR2(16),
+  ORDEN           NUMBER,
+  CONCEPTO_CON    VARCHAR2(250),
+  USUARIO_PROCESO VARCHAR2(20),
+  FECHA_PROCESO   DATE,
+  INDTIPO         CHAR(5)
+)
+;
+comment on column RECAUDO_EXTERNO_CAUSACION.OPERACION
+  is 'Tipo de operacion (Causacion , Ingreso)';
+comment on column RECAUDO_EXTERNO_CAUSACION.FEC_CORTE_INI
+  is 'Fecha de corte inicial';
+comment on column RECAUDO_EXTERNO_CAUSACION.FEC_CORTE_FIN
+  is 'Fecha de corte final';
+comment on column RECAUDO_EXTERNO_CAUSACION.ORI_IDBANCO
+  is 'banco origen';
+comment on column RECAUDO_EXTERNO_CAUSACION.ORI_CUENTA
+  is 'cuenta de recaudo origen';
+comment on column RECAUDO_EXTERNO_CAUSACION.IDCONCESIONARIO
+  is 'concesionario del recaudo';
+comment on column RECAUDO_EXTERNO_CAUSACION.VALOR_DEBITO
+  is 'valor debito';
+comment on column RECAUDO_EXTERNO_CAUSACION.VALOR_CREDITO
+  is 'valor credito';
+comment on column RECAUDO_EXTERNO_CAUSACION.DEB_CTA_CON
+  is 'cuenta contable debito';
+comment on column RECAUDO_EXTERNO_CAUSACION.DEB_CEN_COS
+  is 'centro de costo debito';
+comment on column RECAUDO_EXTERNO_CAUSACION.DEB_NIT_TER
+  is 'nit tercero debito';
+comment on column RECAUDO_EXTERNO_CAUSACION.CRE_CTA_CON
+  is 'cuenta contable credito';
+comment on column RECAUDO_EXTERNO_CAUSACION.CRE_CEN_COS
+  is 'centro de costo credito';
+comment on column RECAUDO_EXTERNO_CAUSACION.CRE_NIT_TER
+  is 'nit tercero credito';
+comment on column RECAUDO_EXTERNO_CAUSACION.ORDEN
+  is 'orden en el comprobante';
+comment on column RECAUDO_EXTERNO_CAUSACION.CONCEPTO_CON
+  is 'concepto contable';
+comment on column RECAUDO_EXTERNO_CAUSACION.USUARIO_PROCESO
+  is 'usuario que genero la causacion';
+comment on column RECAUDO_EXTERNO_CAUSACION.FECHA_PROCESO
+  is 'fecha de proceso';
+comment on column RECAUDO_EXTERNO_CAUSACION.INDTIPO
+  is 'tipo de recaudo (SIMIT,POLCA)';
+

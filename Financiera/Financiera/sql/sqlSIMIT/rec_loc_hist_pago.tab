@@ -1,0 +1,13 @@
+create table REC_LOC_HIST_PAGO
+(
+  CONSECUTIVO        NUMBER not null,
+  DIVIPO             VARCHAR2(8),
+  VALOR_RECAUDO      NUMBER,
+  CEDULA_FUNCIONARIO VARCHAR2(50),
+  TIPO_PAGO          VARCHAR2(30),
+  POLCA              CHAR(1) not null
+)
+;
+alter table REC_LOC_HIST_PAGO
+  add constraint PK_REC_LOC_HIST_PAGO primary key (CONSECUTIVO, POLCA);
+

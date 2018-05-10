@@ -1,0 +1,158 @@
+create table RECAUDO_LOCAL_LIQUIDACION
+(
+  IDRECAUDO_LOCAL_LIQUIDACION NUMBER,
+  IDBANCO                     CHAR(2),
+  CTA_RECAUDO                 VARCHAR2(16),
+  INDTIPO                     VARCHAR2(5),
+  FEC_CORTE                   DATE,
+  FEC_TRAN                    DATE,
+  OFICINA_ORIGEN              VARCHAR2(250),
+  VALOR_EFECTIVO              NUMBER,
+  VALOR_CHEQUE                NUMBER,
+  VALOR_TOTAL                 NUMBER,
+  NIT_M                       VARCHAR2(10),
+  IDMUNICIPIO                 CHAR(8),
+  IDDEPARTAMENTO              CHAR(2),
+  USUARIO_PROCESO             VARCHAR2(20),
+  FECHA_PROCESO               DATE,
+  IND_PROCESO                 NUMBER,
+  INDORIGEN                   CHAR(3),
+  IDCONCESIONARIO             CHAR(2),
+  DIAS_DISPERSION             NUMBER,
+  FREC_DISPERSION             NUMBER,
+  FEC_DISPERSION              DATE,
+  S_VALOR_0                   NUMBER default 0,
+  S_VALOR_1                   NUMBER default 0,
+  S_VALOR_2                   NUMBER default 0,
+  S_VALOR_3                   NUMBER default 0,
+  S_VALOR_4                   NUMBER default 0,
+  S_VALOR_5                   NUMBER default 0,
+  S_VALOR_6                   NUMBER default 0,
+  P_VALOR_7                   NUMBER default 0,
+  P_VALOR_8                   NUMBER default 0,
+  P_VALOR_9                   NUMBER default 0,
+  P_VALOR_10                  NUMBER default 0,
+  P_VALOR_11                  NUMBER default 0,
+  P_VALOR_12                  NUMBER default 0,
+  P_VALOR_13                  NUMBER default 0,
+  P_VALOR_14                  NUMBER default 0,
+  P_VALOR_15                  NUMBER default 0,
+  P_VALOR_16                  NUMBER default 0,
+  P_VALOR_17                  NUMBER default 0,
+  P_VALOR_18                  NUMBER default 0,
+  P_VALOR_19                  NUMBER default 0,
+  P_VALOR_20                  NUMBER default 0,
+  P_VALOR_21                  NUMBER default 0,
+  P_VALOR_22                  NUMBER default 0,
+  P_VALOR_23                  NUMBER default 0,
+  P_VALOR_24                  NUMBER default 0,
+  P_VALOR_25                  NUMBER default 0,
+  P_VALOR_26                  NUMBER default 0,
+  P_VALOR_27                  NUMBER default 0,
+  P_VALOR_28                  NUMBER default 0,
+  P_CONSIGNADO                NUMBER
+)
+;
+comment on column RECAUDO_LOCAL_LIQUIDACION.IDRECAUDO_LOCAL_LIQUIDACION
+  is 'autonumerico';
+comment on column RECAUDO_LOCAL_LIQUIDACION.IDBANCO
+  is 'banco';
+comment on column RECAUDO_LOCAL_LIQUIDACION.CTA_RECAUDO
+  is 'cuenta recaudo';
+comment on column RECAUDO_LOCAL_LIQUIDACION.INDTIPO
+  is 'tipo de recuado (SIMIT, POLCA)';
+comment on column RECAUDO_LOCAL_LIQUIDACION.FEC_CORTE
+  is 'fecha de corte';
+comment on column RECAUDO_LOCAL_LIQUIDACION.FEC_TRAN
+  is 'fecha de transaccion';
+comment on column RECAUDO_LOCAL_LIQUIDACION.OFICINA_ORIGEN
+  is 'oficina origen';
+comment on column RECAUDO_LOCAL_LIQUIDACION.VALOR_EFECTIVO
+  is 'valor efectivo';
+comment on column RECAUDO_LOCAL_LIQUIDACION.VALOR_CHEQUE
+  is 'valor cheque';
+comment on column RECAUDO_LOCAL_LIQUIDACION.VALOR_TOTAL
+  is 'valor total';
+comment on column RECAUDO_LOCAL_LIQUIDACION.NIT_M
+  is 'nit municipio';
+comment on column RECAUDO_LOCAL_LIQUIDACION.IDMUNICIPIO
+  is 'municipio';
+comment on column RECAUDO_LOCAL_LIQUIDACION.IDDEPARTAMENTO
+  is 'departamento';
+comment on column RECAUDO_LOCAL_LIQUIDACION.USUARIO_PROCESO
+  is 'usuario proceso';
+comment on column RECAUDO_LOCAL_LIQUIDACION.FECHA_PROCESO
+  is 'fecha de proceso';
+comment on column RECAUDO_LOCAL_LIQUIDACION.IND_PROCESO
+  is 'indicador de proceso';
+comment on column RECAUDO_LOCAL_LIQUIDACION.INDORIGEN
+  is 'indicador origen (REC, AJU)';
+comment on column RECAUDO_LOCAL_LIQUIDACION.IDCONCESIONARIO
+  is 'concesionario';
+comment on column RECAUDO_LOCAL_LIQUIDACION.DIAS_DISPERSION
+  is 'dias de dispersion';
+comment on column RECAUDO_LOCAL_LIQUIDACION.FREC_DISPERSION
+  is 'frecuencia de dispersion';
+comment on column RECAUDO_LOCAL_LIQUIDACION.FEC_DISPERSION
+  is 'fecha de dispersion';
+comment on column RECAUDO_LOCAL_LIQUIDACION.S_VALOR_0
+  is 'comsion recaudo';
+comment on column RECAUDO_LOCAL_LIQUIDACION.S_VALOR_1
+  is 'valor simit';
+comment on column RECAUDO_LOCAL_LIQUIDACION.S_VALOR_2
+  is 'valor concesionario';
+comment on column RECAUDO_LOCAL_LIQUIDACION.S_VALOR_3
+  is 'valro fondo cobertura concesionario';
+comment on column RECAUDO_LOCAL_LIQUIDACION.S_VALOR_4
+  is 'valor fondo cobertura simit';
+comment on column RECAUDO_LOCAL_LIQUIDACION.S_VALOR_5
+  is 'equilibrio economico';
+comment on column RECAUDO_LOCAL_LIQUIDACION.S_VALOR_6
+  is 'valor neto concesionario';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_7
+  is 'valor simit pm';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_8
+  is 'valor concesionario';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_9
+  is 'valor fondo cobertura concesioanrio';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_10
+  is 'valor fondo cobertura simit';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_11
+  is 'equilibrio economico pm';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_12
+  is 'valor simit pp';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_13
+  is 'valor sevial ';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_14
+  is 'equilibrio economico pp';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_15
+  is 'polca';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_16
+  is 'fcm';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_17
+  is 'sevial';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_18
+  is 'equilibrio economico cp';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_19
+  is 'iva fcm';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_20
+  is 'iva sevial';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_21
+  is 'retencion sevial';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_22
+  is 'timbre sevial';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_23
+  is 'timbre fcm';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_24
+  is 'valor neto sevial';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_25
+  is 'valor neto concesionario';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_26
+  is 'valor neto fcm';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_27
+  is 'valor neto simit';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_VALOR_28
+  is 'valor neto equilibrio economico';
+comment on column RECAUDO_LOCAL_LIQUIDACION.P_CONSIGNADO
+  is 'porcentaje consignado';
+

@@ -1,0 +1,11 @@
+create table MENUXROL
+(
+  MENUID NUMBER,
+  ROLID  NUMBER
+)
+;
+comment on column MENUXROL.MENUID
+  is 'Id del menu';
+comment on column MENUXROL.ROLID
+  is 'Id rol';
+

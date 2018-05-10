@@ -1,0 +1,88 @@
+create table NOVTERCERO
+(
+  IDMUNICIPIO     CHAR(8) not null,
+  NIT_T           CHAR(10) not null,
+  NOMBRE          VARCHAR2(50),
+  IDBANCO         CHAR(2),
+  TIPOCUENTA      VARCHAR2(3),
+  CUENTA          VARCHAR2(250),
+  BASE_S          NUMBER,
+  BASE_P          NUMBER,
+  IND_BASE        NUMBER,
+  NUM_TERCERO     NUMBER not null,
+  CORREOTERCERO   VARCHAR2(50),
+  TIPONOV         CHAR(2) not null,
+  NUMERONOV       NUMBER not null,
+  FECHANOV        DATE not null,
+  USUARIONOV      NUMBER not null,
+  USUARIOVAL      NUMBER,
+  FECHAVAL        DATE,
+  FECHAACT        DATE not null,
+  ESTADONOV       VARCHAR2(16) not null,
+  FIRMA1          VARCHAR2(250) not null,
+  FIRMA2          VARCHAR2(250) not null,
+  USUARIOANUL     NUMBER,
+  FECHAANUL       DATE,
+  FECHAAPLICACION DATE,
+  DNSAVVILLAS     VARCHAR2(16),
+  DNSGRANBANCO    VARCHAR2(16)
+)
+;
+comment on column NOVTERCERO.IDMUNICIPIO
+  is 'municipio';
+comment on column NOVTERCERO.NIT_T
+  is 'nit del tercero';
+comment on column NOVTERCERO.NOMBRE
+  is 'nombre del tercero';
+comment on column NOVTERCERO.IDBANCO
+  is 'banco ';
+comment on column NOVTERCERO.TIPOCUENTA
+  is 'tipo de cuenta (AHO; CTE)';
+comment on column NOVTERCERO.CUENTA
+  is 'cuenta ';
+comment on column NOVTERCERO.BASE_S
+  is 'porcentaje base simit';
+comment on column NOVTERCERO.BASE_P
+  is 'porcentaje base polca';
+comment on column NOVTERCERO.IND_BASE
+  is 'indicador de base';
+comment on column NOVTERCERO.NUM_TERCERO
+  is 'numero de tercero';
+comment on column NOVTERCERO.CORREOTERCERO
+  is 'correo tercero';
+comment on column NOVTERCERO.TIPONOV
+  is 'Tipo de Novedad 03-Adicionar Tercero, 04:Actualizar Tercero; 05:Eliminar Tercero';
+comment on column NOVTERCERO.NUMERONOV
+  is 'Numero de novedad';
+comment on column NOVTERCERO.FECHANOV
+  is 'Fecha de novedad';
+comment on column NOVTERCERO.USUARIONOV
+  is 'Usuario que reporta novedad';
+comment on column NOVTERCERO.USUARIOVAL
+  is 'Usuario que valida novedad';
+comment on column NOVTERCERO.FECHAVAL
+  is 'Fecha validacion novedad';
+comment on column NOVTERCERO.FECHAACT
+  is 'FechaActivacionNovedad';
+comment on column NOVTERCERO.ESTADONOV
+  is 'Estado Novedad: INGRESADA, VALIDADA, ACTIVA,ANULADA';
+comment on column NOVTERCERO.FIRMA1
+  is 'Nombre de la primera firma';
+comment on column NOVTERCERO.FIRMA2
+  is 'Nombre de la segunda firma';
+comment on column NOVTERCERO.USUARIOANUL
+  is 'Usuario que anula la novedad';
+comment on column NOVTERCERO.FECHAANUL
+  is 'Fecha anulacion novedad';
+comment on column NOVTERCERO.FECHAAPLICACION
+  is 'Fecha Aplicacion';
+comment on column NOVTERCERO.DNSAVVILLAS
+  is 'Dns Avvillas';
+comment on column NOVTERCERO.DNSGRANBANCO
+  is 'Dns Granbanco';
+alter table NOVTERCERO
+  add constraint PK_NOVTERCERO primary key (TIPONOV, NUMERONOV);
+alter table NOVTERCERO
+  add constraint CH_TIPOCUENTA_NOVT
+  check (tipocuenta IN ('AHO','CTE'));
+

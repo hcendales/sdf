@@ -1,0 +1,13 @@
+declare
+v_fechaCorte date;
+v_usuario number;
+v_cod_error number;
+v_msg_error varchar2(1000);
+begin
+v_fechaCorte := to_Date('2012-06-30', 'yyyy-mm-dd');
+v_usuario := 36454156;
+
+pk_batch.inicar_proceso_deuda(v_fechaCorte,v_usuario,v_cod_error, v_msg_error);
+DBMS_OUTPUT.PUT_LINE(v_msg_error || ' ' || v_cod_error );
+
+end;
