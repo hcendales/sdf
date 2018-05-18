@@ -38,7 +38,7 @@ public abstract class Constants {
     //public static String AMBIENTE = "DESA";
     public static String AMBIENTE = "PROD";
     
-    public static String VERSION = "Version 2017.09.07";
+    public static String VERSION = "Version 2018.05.16";
     
     public static String menuadd =
             SQLTools.buildProcedureCall("pk_auten", "i_menu", 7);
@@ -282,6 +282,9 @@ public abstract class Constants {
     
     public static String liquidaRecaudoLocal =
             SQLTools.buildProcedureCall("pk_proc", "l_recaudo_local", 9);
+
+    public static String liquidaDeposSinIdent =
+            SQLTools.buildProcedureCall("pk_recloc", "liquidaDeposSinIdent", 8);
 
     public static String contaSinIde =
             SQLTools.buildProcedureCall("pk_recloc", "contabiliza_trf_siniden", 8);

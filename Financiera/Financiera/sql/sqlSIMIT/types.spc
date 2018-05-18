@@ -1,6 +1,0 @@
-CREATE OR REPLACE PACKAGE "TYPES"
-AS
-    TYPE ref_cursor IS REF CURSOR;
-END;
-/
-

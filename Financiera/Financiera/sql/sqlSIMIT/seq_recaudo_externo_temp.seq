@@ -1,7 +1,0 @@
-create sequence SEQ_RECAUDO_EXTERNO_TEMP
-minvalue 1
-maxvalue 999999999999999999999999999
-start with 23021
-increment by 1
-cache 20;
-

@@ -56,7 +56,7 @@ public class cargueArchivo extends AbstractPageBean {
     private void _init() throws Exception {
         cta_recaudo_fcmDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet)getValue("#{SessionBean1.cta_recaudo_fcmRowSet2}"));
         bancoDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet)getValue("#{SessionBean1.bancoRowSet1}"));
-        ddtipocargueDefaultOptions.setOptions(new com.sun.rave.web.ui.model.Option[] {new com.sun.rave.web.ui.model.Option("", "Seleccione"), new com.sun.rave.web.ui.model.Option("REC", "Recaudo Local Bancos"), new com.sun.rave.web.ui.model.Option("EXT", "Extracto Banco"), new com.sun.rave.web.ui.model.Option("SIN", "Historico depositos sin identificar"), new com.sun.rave.web.ui.model.Option("MOV", "Movimiento Avvillas"), new com.sun.rave.web.ui.model.Option("IDE", "Identificacion Masiva"), new com.sun.rave.web.ui.model.Option("DEP", "Depositos Identificados")});
+        ddtipocargueDefaultOptions.setOptions(new com.sun.rave.web.ui.model.Option[] {new com.sun.rave.web.ui.model.Option("", "Seleccione"), new com.sun.rave.web.ui.model.Option("REC", "Recaudo Local Bancos"), new com.sun.rave.web.ui.model.Option("EXT", "Extracto Banco"), new com.sun.rave.web.ui.model.Option("SIN", "Historico depositos sin identificar"), new com.sun.rave.web.ui.model.Option("MOV", "Movimiento Avvillas"), new com.sun.rave.web.ui.model.Option("IDE", "Identificacion Masiva"), new com.sun.rave.web.ui.model.Option("DEP", "Depositos Identificados"), new com.sun.rave.web.ui.model.Option("DSI", "Depositos sin identificar")});
     }
     
     private Page page1 = new Page();
@@ -678,7 +678,7 @@ public class cargueArchivo extends AbstractPageBean {
             fileTypeStaticText.setVisible(true);
             label4.setVisible(true);
             fileSizeStaticText.setVisible(true);
-        }else if (ddtipocargue.getValue().toString().compareToIgnoreCase("SIN") == 0) {
+        }else if (ddtipocargue.getValue().toString().compareToIgnoreCase("SIN") == 0 || ddtipocargue.getValue().toString().compareToIgnoreCase("DSI") == 0 ) {
             dropDownBanco.setVisible(false);
             dropDownCuenta.setVisible(false);
             label1.setVisible(true);

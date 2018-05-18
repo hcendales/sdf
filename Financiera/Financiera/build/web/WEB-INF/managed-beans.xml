@@ -802,4 +802,14 @@
         <managed-bean-class>wasimit.IdentificarAcuerdo</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>liquida_depos_sin_ident</managed-bean-name>
+        <managed-bean-class>wasimit.liquida_depos_sin_ident</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>ReporteLiqDeposSinIden</managed-bean-name>
+        <managed-bean-class>wasimit.ReporteLiqDeposSinIden</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

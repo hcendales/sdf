@@ -30,7 +30,7 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library files="7">
-                    <file>${libs.Jasper202.classpath}</file>
+                    <file>${libs.Jasper.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
@@ -64,14 +64,12 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library files="7">
-                    <file>${libs.Jasper202.classpath}</file>
+                    <file>${libs.Jasper.classpath}</file>
+                    <path-in-war/>
                 </library>
                 <library files="1">
-                    <file>${file.reference.classes12.jar}</file>
-                </library>
-                <library dirs="1">
-                    <file>${file.reference.Financiera-src}</file>
-                    <path-in-war>src</path-in-war>
+                    <file>${libs.Oracle.classpath}</file>
+                    <path-in-war/>
                 </library>
             </web-module-additional-libraries>
             <source-roots>
